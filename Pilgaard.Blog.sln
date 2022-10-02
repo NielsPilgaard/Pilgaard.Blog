@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3ECF841F-799B-41B0-823C-B642DE060366}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2AC22BC6-52F4-4C11-83B3-B6AB4A593554}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilgaard.Blog.Tests", "tests\Pilgaard.Blog.Tests\Pilgaard.Blog.Tests.csproj", "{F1A9CA87-8425-441C-AA95-E63F149C8309}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilgaard.Blog", "Pilgaard.Blog\Pilgaard.Blog.csproj", "{02B0C39A-936C-43E3-AD9B-06E49421FB4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "posts", "posts", "{44EA552E-DC62-41D8-BC2A-E3AF7F1E49CA}"
+	ProjectSection(SolutionItems) = preProject
+		making-a-blog-part1.md = making-a-blog-part1.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1A9CA87-8425-441C-AA95-E63F149C8309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A9CA87-8425-441C-AA95-E63F149C8309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A9CA87-8425-441C-AA95-E63F149C8309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A9CA87-8425-441C-AA95-E63F149C8309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B0C39A-936C-43E3-AD9B-06E49421FB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B0C39A-936C-43E3-AD9B-06E49421FB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B0C39A-936C-43E3-AD9B-06E49421FB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B0C39A-936C-43E3-AD9B-06E49421FB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F1A9CA87-8425-441C-AA95-E63F149C8309} = {2AC22BC6-52F4-4C11-83B3-B6AB4A593554}
+		{02B0C39A-936C-43E3-AD9B-06E49421FB4E} = {3ECF841F-799B-41B0-823C-B642DE060366}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA83F183-BEDB-4FE2-8073-01B45B0A2ABA}
+	EndGlobalSection
+EndGlobal
