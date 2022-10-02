@@ -1,5 +1,7 @@
 # Making a blog with C# - Part 1
 
+## Planning & pretext
+
 I've been wanting to try out Blazor for a while now, so I decided 
 on making a blog with it, so I could share my experienes along the way.
 
@@ -10,18 +12,17 @@ I'll be improving on the blog gradually and making posts about it along the way.
 
 **The plan:**
 
-1) Pick tools
-2) Setup hosting
-3) Setup git & CI/CD
-4) Blog website MVP - *probably just a page with text* :sweat_smile:
-5) Publish website
-6) Add links to GitHub, Twitter, LinkedIn etc
-7) Improve appearance of the website
-8) Get a custom domain
-9) Search Engine Optimizations (SEO)
-10) Allow people to subscribe to get notifications about new posts
-11) A system that allows me to make and publish new blog posts directly on the website
-12) ???
+1. Pick tools
+2. Setup hosting
+3. Setup git & CI/CD
+4. Blog website MVP - *probably just a page with text* :sweat_smile:
+5. Publish website
+6. Add links to GitHub, Twitter, LinkedIn etc
+7. Improve appearance of the website
+8. Get a custom domain
+9. Search Engine Optimizations (SEO.
+10. Allow people to subscribe to get notifications about new posts
+11. A system that allows me to make and publish new blog posts directly on the website
 
 Let's see how far that plan takes us!
 
@@ -40,10 +41,6 @@ I usually work with dotnet 6 worker services, so Blazor Server felt like a bette
 
 I decided on using Azure - it feels like the natural choice for dotnet, and I've used it a bit in the past. 
 
-AWS was also on the table, but I prefer to avoid it, due to the labouring practices of other parts of Amazon.
-
-A static website host didn't feel quite technical enough for what I wanted to do.
-
 ### Database
 
 A goal of mine is to serve posts through a database I haven't used in production before. 
@@ -51,7 +48,6 @@ A goal of mine is to serve posts through a database I haven't used in production
 The databases I considered were MongoDb, Azure Cosmos Db and AWS DynamoDb.
 
 After looking at pricing, I decided on Azure Cosmos Db to stick with Azure, as they were all fairly similar.
-
 
 ## Summary
 
