@@ -1,1 +1,0 @@
-namespace Pilgaard.Blog.Tests;
