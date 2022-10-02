@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Pilgaard.Blog\Pilgaard.Blog.csproj" />
+  </ItemGroup>
+
 </Project>
