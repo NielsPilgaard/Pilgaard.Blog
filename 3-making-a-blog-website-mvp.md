@@ -1,4 +1,4 @@
-# Making a blog with C# - Part 3 - Publishing the blog!
+# Making a blog with C# - Part 3 - Building the MVP
 
 The first couple of blog posts are simply `.md` files stored in my project. 
 In order to actually display them on the website the following actions had to be made:
@@ -10,9 +10,9 @@ In order to actually display them on the website the following actions had to be
 
 ## Rendering Markdown with Markdig
 
-## Syntax Highlighting
+## Prettier Code Blocks
 
-### Adding padding to code blocks
+### Syntax Highlighting
 
 ## Publish through Visual Studio
 
