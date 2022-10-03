@@ -1,7 +1,22 @@
 ﻿@page "/"
+@using Pilgaard.Blog.Extensions
 
-<PageTitle>Index</PageTitle>
+@foreach (var blogPost in _blogPosts)
+{
+    @blogPost
 
-<h1>Hello, world!</h1>
+}
 
-Welcome to your new app.
+@code {
+    private readonly List<MarkupString> _blogPosts = new();
+    protected override async Task OnInitializedAsync()
+    {
+        var fileNames = Directory.EnumerateFiles("../../posts", "*.md", SearchOption.TopDirectoryOnly);
+        foreach (var fileName in fileNames)
+        {
+            var text = await File.ReadAllTextAsync(fileName);
+            _blogPosts.Add(text.ToHtml()); 
+        }
+    }
+
+}

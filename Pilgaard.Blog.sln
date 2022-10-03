@@ -12,8 +12,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "posts", "posts", "{44EA552E-DC62-41D8-BC2A-E3AF7F1E49CA}"
 	ProjectSection(SolutionItems) = preProject
 		posts\making-a-blog-part1.md = posts\making-a-blog-part1.md
-		issues.md = issues.md
-		notes.md = notes.md
+		making-a-blog-part3-website-mvp.md = making-a-blog-part3-website-mvp.md
+		making-a-blog-part2-tools-and-hosting.md = making-a-blog-part2-tools-and-hosting.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilgaard.Blog", "src\Pilgaard.Blog\Pilgaard.Blog.csproj", "{6441739F-D94A-413B-8379-F3AAE0601CFB}"
