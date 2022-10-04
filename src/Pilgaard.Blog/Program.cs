@@ -6,24 +6,18 @@ await ConfigureRequestPipeline(app).RunAsync();
 
 static WebApplication ConfigureServices(WebApplicationBuilder builder)
 {
-    if (!builder.Environment.IsDevelopment())
+    builder.Services.AddSignalR().AddAzureSignalR(options =>
     {
-        builder.Services.AddSignalR().AddAzureSignalR(options =>
-        {
-            options.ServerStickyMode =
-                Microsoft.Azure.SignalR.ServerStickyMode.Required;
-        });
-    }
-    else
-    {
-        builder.Services.AddSignalR();
-    }
+        options.ServerStickyMode =
+            Microsoft.Azure.SignalR.ServerStickyMode.Required;
+    });
 
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
 
     return builder.Build();
 }
+
 
 static WebApplication ConfigureRequestPipeline(WebApplication app)
 {

@@ -15,4 +15,16 @@
 		<PackageReference Include="Microsoft.Azure.SignalR" Version="1.18.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="Posts\1-making-a-blog.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Posts\2-making-a-blog-tools-and-hosting.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Posts\3-making-a-blog-website-mvp.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>
