@@ -1,4 +1,4 @@
-name: Build and deploy dotnet app to Linux WebApp PilgaardBlog
+name: Deploy to Azure
 on:
   push:
     branches:
