@@ -2,7 +2,7 @@ name: Build and deploy dotnet app to Linux WebApp PilgaardBlog
 on:
   push:
     branches:
-    - master
+    - main
 env:
   AZURE_WEBAPP_NAME: PilgaardBlog
   AZURE_WEBAPP_PACKAGE_PATH: src/Pilgaard.Blog/publish
