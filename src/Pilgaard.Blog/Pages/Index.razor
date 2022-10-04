@@ -11,7 +11,7 @@
     private readonly List<MarkupString> _blogPosts = new();
     protected override async Task OnInitializedAsync()
     {
-        var fileNames = Directory.EnumerateFiles("../../posts", "*.md", SearchOption.TopDirectoryOnly);
+        var fileNames = Directory.EnumerateFiles("Posts", "*.md", SearchOption.TopDirectoryOnly);
         foreach (var fileName in fileNames)
         {
             var text = await File.ReadAllTextAsync(fileName);
