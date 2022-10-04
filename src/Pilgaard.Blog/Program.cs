@@ -1,13 +1,11 @@
 using Azure.Identity;
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
 var app = ConfigureServices(builder);
 await ConfigureRequestPipeline(app).RunAsync();
 
 static WebApplication ConfigureServices(WebApplicationBuilder builder)
 {
-    AddAzureKeyVault(builder);
-
     if (!builder.Environment.IsDevelopment())
     {
         builder.Services.AddSignalR().AddAzureSignalR(options =>
@@ -25,13 +23,6 @@ static WebApplication ConfigureServices(WebApplicationBuilder builder)
     builder.Services.AddServerSideBlazor();
 
     return builder.Build();
-}
-
-static void AddAzureKeyVault(WebApplicationBuilder webApplicationBuilder)
-{
-    var keyVaultEndpoint = Environment.GetEnvironmentVariable("VaultUri");
-    ArgumentNullException.ThrowIfNull(keyVaultEndpoint, "Environment.GetEnvironmentVariable(\"VaultUri\")");
-    webApplicationBuilder.Configuration.AddAzureKeyVault(new Uri(keyVaultEndpoint), new DefaultAzureCredential());
 }
 
 static WebApplication ConfigureRequestPipeline(WebApplication app)
