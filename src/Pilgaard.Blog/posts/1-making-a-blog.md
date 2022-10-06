@@ -18,10 +18,10 @@ I'll be improving on the blog gradually and making posts about it along the way.
 4. Setup git & CI/CD
 5. Add links to GitHub, Twitter, LinkedIn etc
 6. Improve appearance of the website
-7. Get a custom domain
-8. Search Engine Optimizations (SEO)
-9. Allow people to subscribe to get notifications about new posts
-10. A system that allows me to make and publish new blog posts directly on the website
+7. A system that allows me to make and publish new blog posts directly on the website
+8. Get a custom domain
+9. Search Engine Optimizations (SEO)
+10. Allow people to subscribe to get notifications about new posts
 11. ???
 
 Let's see how far that plan takes us! :D
