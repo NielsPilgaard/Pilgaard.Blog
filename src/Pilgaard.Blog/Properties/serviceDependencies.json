@@ -3,6 +3,10 @@
     "signalr1": {
       "type": "signalr",
       "connectionId": "Azure:SignalR:ConnectionString"
+    },
+    "secrets1": {
+      "ignored": "true",
+      "type": "secrets.keyVault"
     }
   }
 }
