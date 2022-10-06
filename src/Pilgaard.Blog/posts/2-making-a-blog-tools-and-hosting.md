@@ -1,64 +1,62 @@
-# Making a blog with C# - Part 2 - Tools & Hosting
+# Making a blog with C# - Part 2 - Blazor Version & Cloud Hosting
 
 ## Blazor Server or WASM
 
 Blazor is a given, but whether to use Blazor Server or Web Assembly was a hard choice.
 
-I started out with Blazor WASM, but got a bit overwhelmed by all the unknowns, and limitations. 
-I usually work with dotnet 6 worker services, so Blazor Server felt like a better fit for me, at least for the time being.
+I started out with Blazor WASM, but got a bit overwhelmed by all the unknowns, and limitations, and switched to Blazor Server.
 
-### Hosting
+I work with dotnet 6 worker services, so Blazor Server felt like the more comfortable choice.
 
-I decided on using Azure for hosting - it feels like the natural choice for dotnet, and I've used it a bit in the past. 
+## Hosting
+
+I decided on using Azure for hosting - it feels like the natural choice for dotnet, and I've used it a bit in the past.
 
 So I created a pay-as-you-go subscription, and a resource group, hoping that'd be enough to get me started.
 
 A little googling had shown me that I'd need to use both Azure App Service and Azure SignalR Services for a Blazor Server app, and that I should be able to provision it through Visual Studio when publishing inititally.
-Here's the [documentation](https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/server?view=aspnetcore-6.0) I found.
 
-The configuration I had to do in Blazor was minimal, I just had to add the following to the startup procedure:
+Here are the docs I used: https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/server?view=aspnetcore-6.0
 
-```csharp
-builder.Services.AddSignalR().AddAzureSignalR(options =>
-{
-    options.ServerStickyMode =
-        Microsoft.Azure.SignalR.ServerStickyMode.Required;
-});
-```
+## Provisioning
 
-However! After adding that, the app could no longer start locally, 
-so I wrapped it in an if statement to make sure AzureSignalR isn't used locally:
+### Azure SignalR Service
 
-```csharp
-if (!builder.Environment.IsDevelopment())
-{
-    builder.Services.AddSignalR().AddAzureSignalR(options =>
-    {
-        options.ServerStickyMode =
-            Microsoft.Azure.SignalR.ServerStickyMode.Required;
-    });
-}
-else
-{
-    builder.Services.AddSignalR();
-}
-```
+The first thing I had to do was add a Service Dependency to Azure SignalR Service through Visual Studio:
 
-## Summary
+- Right-clicked on the project and clicked `Publish`
+- Clicked the `Connected Services` tab on the left, and then <span style="color:green;font-size:18px">+</span>
+- Found `Azure SignalR Service` in the list, and completed the steps to provision it
 
-What I ended up with, was the following resources in Azure:
+I started out saving the generated connection string in Azure KeyVault, but I had trouble launching the app locally after that, and switched to using a local `secret.json` file.
+
+### Azure App Service
+
+Next up: Provisioning the App Service that was going to host the Blazor website. I did the following to set that up:
+
+- Right-clicked on the project and clicked `Publish` (again)
+- Selected `Azure` as Target and clicked next
+- Selected `Azure App Service (Linux)`
+- Clicked <span style="color:green;font-size:18px">+</span> Create new
+- Completed the steps to provision the `Azure App Service`
+
+When it was created, I went into `Configuration` and added `Azure__SignalR__ConnectionString` as an Application Setting:
+![Azure SignalR ConnectionString](azure__signalr_connectionstring.png)
+
+I chose Application Setting over Connection string to have it injected as an environment variable. I knew that'd work, and I wasn't sure if adding it as a Connection string would just work out of the box.
+
+# Summary
+
+I decided on using Blazor Server instead of WASM, and Azure for hosting.
+
+What I ended up with was the following resources in Azure:
 
 - SignalR Service (Free-tier)
 - App Service (Free-tier)
-- Cosmos Db (Serverless, almost free)
-    - For storing blog posts. Probably overkill, but I wanna try it.
-- KeyVault (Almost free)
 
 ---
 
 Thanks a lot for reading, I hope to see you in the next post :smiley:
-
-
 
 Twitter: [@NillerMedDild](https://twitter.com/NillerMedDild)
 
