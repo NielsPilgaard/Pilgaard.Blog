@@ -1,5 +1,3 @@
-using Azure.Identity;
-
 var builder = WebApplication.CreateBuilder(args);
 var app = ConfigureServices(builder);
 await ConfigureRequestPipeline(app).RunAsync();
