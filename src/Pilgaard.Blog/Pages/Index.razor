@@ -1,10 +1,21 @@
 ﻿@page "/"
 @using Pilgaard.Blog.Extensions
 
+<h2>Welcome to my work-in-progress blog!</h2>
+<p>I'll be writing about making it as I progress.</p>
+
+<ol>
+    <li><a href="#making-a-blog-with-c---part-1">Part 1: Planning</a></li>
+    <li><a href="#making-a-blog-with-c---part-2---blazor-version--cloud-hosting">Part 2: Blazor Version & Cloud Hosting</a></li>
+    <li><a href="#wip-making-a-blog-with-c---part-3---building-the-mvp">Part 3: Publishing the website</a></li>
+
+</ol>
+
 @foreach (var blogPost in _blogPosts)
 {
+    <br />
+    <br />
     @blogPost
-
 }
 
 @code {
@@ -16,7 +27,7 @@
         foreach (var fileName in fileNames)
         {
             var text = await File.ReadAllTextAsync(fileName);
-            _blogPosts.Add(text.ToHtml()); 
+            _blogPosts.Add(text.ToHtml());
         }
     }
 
