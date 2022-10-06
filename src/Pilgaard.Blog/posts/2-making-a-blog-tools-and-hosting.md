@@ -40,8 +40,7 @@ Next up: Provisioning the App Service that was going to host the Blazor website.
 - Clicked <span style="color:green;font-size:18px">+</span> Create new
 - Completed the steps to provision the `Azure App Service`
 
-When it was created, I went into `Configuration` and added `Azure__SignalR__ConnectionString` as an Application Setting:
-![Azure SignalR ConnectionString](azure__signalr_connectionstring.png)
+When it was created, I went into `Configuration` and added `Azure__SignalR__ConnectionString` as an Application Setting-
 
 I chose Application Setting over Connection string to have it injected as an environment variable. I knew that'd work, and I wasn't sure if adding it as a Connection string would just work out of the box.
 
