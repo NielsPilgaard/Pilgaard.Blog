@@ -23,7 +23,7 @@
 	  <None Update="Posts\3-making-a-blog-website-mvp.md">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Posts\azure__signalr_connectionstring.png">
+	  <None Update="Posts\azure_signalr_connectionstring.png">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
