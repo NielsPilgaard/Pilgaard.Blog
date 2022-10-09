@@ -8,7 +8,6 @@ public static class StringExtensions
     public static readonly MarkdownPipeline MarkdownPipeline =
         new MarkdownPipelineBuilder()
             .UseAdvancedExtensions()
-            .UseSyntaxHighlighting()
             .UseEmojiAndSmiley()
             .Build();
 
