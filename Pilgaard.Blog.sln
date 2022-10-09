@@ -11,13 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilgaard.Blog.Tests", "test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pilgaard.Blog", "src\Pilgaard.Blog\Pilgaard.Blog.csproj", "{6441739F-D94A-413B-8379-F3AAE0601CFB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "posts", "posts", "{3005859A-6A77-4E00-9EDD-1C86D23C3269}"
-	ProjectSection(SolutionItems) = preProject
-		posts\1-making-a-blog.md = posts\1-making-a-blog.md
-		posts\2-making-a-blog-tools-and-hosting.md = posts\2-making-a-blog-tools-and-hosting.md
-		posts\3-making-a-blog-website-mvp.md = posts\3-making-a-blog-website-mvp.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{38FBCEAD-1A8B-4EF4-8936-8B76875C85E4}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\continuous-deployment.yml = .github\workflows\continuous-deployment.yml
