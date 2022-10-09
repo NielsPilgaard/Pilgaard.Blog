@@ -1,4 +1,6 @@
-# Making a blog with C# - Part 2 - Blazor Version & Cloud Hosting
+<section id="making-a-blog-part-2">
+<h1>Making a blog with C# - Part 2 - Cloud Hosting</h1>
+</section>
 
 ## Blazor Server or WASM
 
@@ -39,7 +41,7 @@ Next up: Provisioning the App Service that was going to host the Blazor website.
 - Selected `Azure App Service (Linux)`
 - Clicked <span style="color:green;font-size:18px">+</span> Create new
 - Completed the steps to provision the `Azure App Service`
-    - I configured deployment to be through GitHub actions, so Visual Studio created a workflow yml for me :ok_hand:
+  - I configured deployment to be through GitHub actions, so Visual Studio created a workflow yml for me :ok_hand:
 
 When it was created, I went into `Configuration` and added `Azure__SignalR__ConnectionString` as an Application Setting-
 
@@ -61,5 +63,3 @@ Thanks a lot for reading, I hope to see you in the next post :smiley:
 Twitter: [@NillerMedDild](https://twitter.com/NillerMedDild)
 
 GitHub: [NielsPilgaard](https://github.com/NielsPilgaard)
-
----
