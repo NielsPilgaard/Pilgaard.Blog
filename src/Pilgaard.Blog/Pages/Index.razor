@@ -3,14 +3,15 @@
 
 <h2>Welcome to my work-in-progress blog!</h2>
 <p>I'll be writing about making it as I progress.</p>
-
-<ol>
-    <li><a href="#making-a-blog-with-c---part-1">Part 1: Planning</a></li>
-    <li><a href="#making-a-blog-with-c---part-2---blazor-version--cloud-hosting">Part 2: Blazor Version & Cloud Hosting</a></li>
-    <li><a href="#wip-making-a-blog-with-c---part-3---building-the-mvp">Part 3: Publishing the website</a></li>
-
-</ol>
-
+<hr />
+<h3>Blog Building Series</h3>
+<ul style="list-style: none; display: contents">
+    @* ReSharper disable Html.IdNotResolved *@
+    <li><a href="#making-a-blog-part-1" onclick="event.stopPropagation();">Part 1: Planning</a></li>
+    <li><a href="#making-a-blog-part-2" onclick="event.stopPropagation();">Part 2: Cloud Hosting</a></li>
+    <li><a href="#making-a-blog-part-3" onclick="event.stopPropagation();">Part 3: Building the website</a></li>
+</ul>
+<hr />
 @foreach (var blogPost in _blogPosts)
 {
     <br />
@@ -30,5 +31,4 @@
             _blogPosts.Add(text.ToHtml());
         }
     }
-
 }
