@@ -1,9 +1,7 @@
-<section id="making-a-blog-part-3">
-<h1>Making a blog with C# - Part 3 - Building the MVP</h1>
-</section>
+<h1 id="making-a-blog-part-3">Making a blog with C# - Part 3 - Building the MVP</h1>
 
 The first couple of blog posts are simply `.md` files stored in my project.
-In order to actually display them on the website, here's what I did:
+In order to actually display them on the website, I added the code below to `Index.razor`:
 
 ```csharp
 @page "/"
@@ -30,13 +28,14 @@ In order to actually display them on the website, here's what I did:
 ```
 
 This does the following:
+
 - Find all `.md` files that should be displayed
-    - With this approach, files must be copied to the output directory on build
+  - With this approach, files must be copied to the output directory on build
 - Read the files
 - Convert their text to HTML
 - Render the HTML
 
-
+I used [Markdig](https://github.com/xoofx/markdig) to convert markdown to HTML, coupled with [Syntax Highlighting]()
 
 ## Rendering Markdown with Markdig
 

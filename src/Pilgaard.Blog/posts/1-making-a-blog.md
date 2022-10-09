@@ -1,6 +1,4 @@
-<section id="making-a-blog-part-1">
-<h1>Making a blog with C# - Part 1</h1>
-</section>
+<h1 id="making-a-blog-part-1">Making a blog with C# - Part 1</h1>
 
 ## Planning
 

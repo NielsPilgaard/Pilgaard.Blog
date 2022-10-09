@@ -1,6 +1,4 @@
-<section id="making-a-blog-part-2">
-<h1>Making a blog with C# - Part 2 - Cloud Hosting</h1>
-</section>
+<h1 id="making-a-blog-part-2">Making a blog with C# - Part 2 - Cloud Hosting</h1>
 
 ## Blazor Server or WASM
 
