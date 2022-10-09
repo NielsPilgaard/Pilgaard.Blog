@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Pilgaard.Blog.Extensions
+@inject IJSRuntime JsRuntime
 
 <h2>Welcome to my work-in-progress blog!</h2>
 <p>I'll be writing about making it as I progress.</p>
@@ -30,5 +31,11 @@
             var text = await File.ReadAllTextAsync(fileName);
             _blogPosts.Add(text.ToHtml());
         }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JsRuntime.InvokeVoidAsync("window.Prism.highlightAll");
+        await base.OnAfterRenderAsync(firstRender);
     }
 }

@@ -10,25 +10,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="~/" />
+    <meta name="description"
+          content="Hi! I write about code - Particularly C#, but also PowerShell and the occasional JavaScript." />
+    <meta property="og:url" content="https://pilgaard-blog.azurewebsites.net/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pilgaard | dotnet blog" />
+    <meta property="og:description" content="Hi! I write about code - Particularly C#, but also PowerShell and the occasional JavaScript." />
+    <meta property="og:image" content="https://pilgaard-blog.azurewebsites.net/favicon.ico" />
+
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="Pilgaard.Blog.styles.css" rel="stylesheet" />
+    <link href="css/prism.css" rel="stylesheet" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
-@RenderBody()
+    @RenderBody()
 
-<div id="blazor-error-ui">
-    <environment include="Staging,Production">
-        An error has occurred. This application may no longer respond until reloaded.
-    </environment>
-    <environment include="Development">
-        An unhandled exception has occurred. See browser dev tools for details.
-    </environment>
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
-
-<script src="_framework/blazor.server.js"></script>
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.server.js"></script>
+    <script src="scripts/prism.js"></script>
 </body>
 </html>
