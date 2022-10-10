@@ -1,9 +1,14 @@
+using Syncfusion.Blazor;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = ConfigureServices(builder);
 await ConfigureRequestPipeline(app).RunAsync();
 
 static WebApplication ConfigureServices(WebApplicationBuilder builder)
 {
+    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
+        builder.Configuration.GetValue<string>("Syncfusion:LicenseKey"));
+
     builder.Services.AddSignalR().AddAzureSignalR(options =>
     {
         options.ServerStickyMode =
@@ -12,7 +17,7 @@ static WebApplication ConfigureServices(WebApplicationBuilder builder)
 
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
-
+    builder.Services.AddSyncfusionBlazor();
     return builder.Build();
 }
 
