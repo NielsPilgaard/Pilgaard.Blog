@@ -85,8 +85,8 @@ To get Prism to colorize code blocks, here's what to do:
 4. Add this function to the page that should be highlighted:
 
 ```razor
-// This should be at the top
 @inject IJSRuntime JsRuntime
+
 @code {
 protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -94,7 +94,6 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
         await base.OnAfterRenderAsync(firstRender);
     }
 }
-
 ```
 
 And that's it!
