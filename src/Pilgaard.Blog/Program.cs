@@ -1,5 +1,4 @@
 using MudBlazor.Services;
-using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = ConfigureServices(builder);
@@ -16,7 +15,6 @@ static WebApplication ConfigureServices(WebApplicationBuilder builder)
 
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
-    builder.Services.AddSyncfusionBlazor();
     return builder.Build();
 }
 
