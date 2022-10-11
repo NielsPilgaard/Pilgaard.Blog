@@ -7,9 +7,6 @@ await ConfigureRequestPipeline(app).RunAsync();
 
 static WebApplication ConfigureServices(WebApplicationBuilder builder)
 {
-    Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
-        builder.Configuration.GetValue<string>("Syncfusion:LicenseKey"));
-
     builder.Services.AddMudServices();
     builder.Services.AddSignalR().AddAzureSignalR(options =>
     {
