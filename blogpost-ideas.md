@@ -11,3 +11,8 @@
 ## EventStore
 
 - Migrating from SQL Server to EventStore
+
+## RabbitMQ
+
+- Request/Response
+- Publish/Subscribe
