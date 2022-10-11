@@ -1,15 +1,38 @@
 ﻿@inherits LayoutComponentBase
-<MudThemeProvider />
+
+<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" />
 <MudDialogProvider />
 <MudSnackbarProvider />
-<div class="page">
-    <nav class="sidebar">
-        <NavMenu />
-    </nav>
 
-    <main>
-        <article class="content px-4">
+<MudLayout>
+    <MudAppBar Elevation="5" Color="Color.Tertiary">
+        <MudButton Color="Color.Inherit" Href="/about">About</MudButton>
+        <MudSpacer />
+        <MudText></MudText>
+        <MudButton Color="Color.Inherit" Href="/"><MudText Typo="Typo.h2" Class="logo-font">PILGAARD</MudText><MudText Typo="Typo.h6">| dotnet blog</MudText></MudButton>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Inherit" Link="https://www.linkedin.com/in/niels-pilgaard/" Title="My LinkedIn Profile" Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.Twitter" Color="Color.Inherit" Link="https://twitter.com/NillerMedDild" Title="My Twitter Profile" Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/NielsPilgaard" Title="My GitHub Profile" Target="_blank" />
+        <MudIconButton Icon="@Icons.Filled.Code" Color="Color.Inherit" Link="https://github.com/NielsPilgaard/Pilgaard.Blog" Title="Source Code for this website" Target="_blank" />
+    </MudAppBar>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
             @Body
-        </article>
-    </main>
-</div>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    private bool _isDarkMode;
+    private MudThemeProvider _mudThemeProvider = null!;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
+            StateHasChanged();
+        }
+    }
+}
