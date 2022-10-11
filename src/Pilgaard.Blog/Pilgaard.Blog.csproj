@@ -25,5 +25,9 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Pages\BlogPosts\MakingABlog\" />
+	</ItemGroup>
+
 
 </Project>
