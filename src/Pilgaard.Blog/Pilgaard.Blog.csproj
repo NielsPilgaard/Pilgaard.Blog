@@ -10,6 +10,7 @@
 	<ItemGroup>
 		<PackageReference Include="Markdig" Version="0.30.4" />
 		<PackageReference Include="Microsoft.Azure.SignalR" Version="1.18.3" />
+		<PackageReference Include="MudBlazor" Version="6.0.17" />
 		<PackageReference Include="Syncfusion.Blazor" Version="20.3.0.48" />
 	</ItemGroup>
 

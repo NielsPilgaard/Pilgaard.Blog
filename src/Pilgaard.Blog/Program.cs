@@ -1,3 +1,4 @@
+using MudBlazor.Services;
 using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ static WebApplication ConfigureServices(WebApplicationBuilder builder)
     Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(
         builder.Configuration.GetValue<string>("Syncfusion:LicenseKey"));
 
+    builder.Services.AddMudServices();
     builder.Services.AddSignalR().AddAzureSignalR(options =>
     {
         options.ServerStickyMode =
