@@ -1,41 +1,45 @@
 ﻿@page "/"
-@using Pilgaard.Blog.Extensions
-@inject IJSRuntime JsRuntime
 
-<h2>Welcome to my work-in-progress blog!</h2>
-<p>I'll be writing about making it as I progress.</p>
-<hr />
-<h3>Blog Building Series</h3>
-<ul style="list-style: none; display: contents">
-    @* ReSharper disable Html.IdNotResolved *@
-    <li><a href="#making-a-blog-part-1" onclick="event.stopPropagation();">Part 1: Planning</a></li>
-    <li><a href="#making-a-blog-part-2" onclick="event.stopPropagation();">Part 2: Cloud Hosting</a></li>
-    <li><a href="#making-a-blog-part-3" onclick="event.stopPropagation();">Part 3: Building the website</a></li>
-</ul>
-<hr />
-@foreach (var blogPost in _blogPosts)
+<MudText Typo="Typo.h2">Welcome to my work-in-progress blog!</MudText>
+<MudText Typo="Typo.h6" Class="ml-2">I'll be writing about making it as I progress.</MudText>
+<MudDivider></MudDivider>
+
+@foreach (var blogPost in BlogPosts.GroupBy(e => e.BlogPostSeries))
 {
-    <br />
-    <br />
-    @blogPost
+    <MudText Typo="Typo.h2">@blogPost.Key.Value.DisplayName</MudText>
+    @foreach (var post in blogPost)
+    {
+        <MudNavLink Href="@post.RelativeUrl"><MudText>@post.DisplayName</MudText></MudNavLink>
+    }
 }
 
 @code {
-    private readonly List<MarkupString> _blogPosts = new();
-    protected override async Task OnInitializedAsync()
-    {
-        var postsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Posts");
-        var fileNames = Directory.EnumerateFiles(postsPath, "*.md", SearchOption.TopDirectoryOnly);
-        foreach (var fileName in fileNames)
-        {
-            var text = await File.ReadAllTextAsync(fileName);
-            _blogPosts.Add(text.ToHtml());
-        }
-    }
+    private static readonly BlogPostSeries MakingABlog = new("Making a Blog", "making-a-blog", 1, "blazor");
+    private static readonly BlogPost[] BlogPosts = {
+        new("Part 1: Planning", "1-planning",new DateOnly(2022, 10, 9), MakingABlog, 1, MakingABlog.Tags + "planning"),
+        new("Part 2: Hosting", "2-hosting",new DateOnly(2022, 10, 9), MakingABlog, 1, MakingABlog.Tags + "hosting", "azure"),
+        new("Part 3: Building the MVP", "3-building-the-mvp", new DateOnly(2022, 10, 9), MakingABlog, 1, MakingABlog.Tags + "prismjs", "seo"),
+    };
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+
+}
+@code {
+    internal readonly record struct BlogPostSeries(
+        string DisplayName,
+        string PathName,
+        int Order,
+        params string[] Tags);
+
+    internal readonly record struct BlogPost(
+        string DisplayName,
+        string PathName,
+        DateOnly PublishDate,
+        BlogPostSeries? BlogPostSeries = null,
+        int NumberInSeries = 1,
+        params string[] Tags)
     {
-        await JsRuntime.InvokeVoidAsync("window.Prism.highlightAll");
-        await base.OnAfterRenderAsync(firstRender);
+        internal string RelativeUrl => BlogPostSeries is null ?
+            $"posts/{PathName}" :
+            $"posts/{BlogPostSeries.Value.PathName}/{PathName}";
     }
 }
