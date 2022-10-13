@@ -1,9 +1,8 @@
 ﻿@page "/posts/making-a-blog/3-building-the-mvp"
 @using Pilgaard.Blog.Extensions
-@inherits PrismCodeBlockRenderer
+@inherits Pilgaard.Blog.Components.PrismCodeBlockRenderer
 
-<h1 id="making-a-blog-part-3">Making a blog with C# - Part 3 - Building the MVP</h1>
-
+<MudText Typo="Typo.h1">Making a blog with C# - Part 3 - Building the MVP</MudText>
 <MudText Typo="Typo.body1">
     The first couple of blog posts are simply <code>.md</code> files stored in my project.
     In order to actually display them on the website, I added the code below to <code>Index.razor</code>:
@@ -47,7 +46,7 @@
     <li>Render the HTML</li>
 </ul>
 <MudDivider></MudDivider>
-<h2 id="rendering-markdown-with-markdig">Rendering Markdown with Markdig</h2>
+<MudText Typo="Typo.h3">Rendering Markdown with Markdig</MudText>
 <MudText Typo="Typo.body1">I used <a href="https://github.com/xoofx/markdig">Markdig</a> to convert markdown to HTML, through an extension method:</MudText>
 
 @(@"
@@ -70,8 +69,7 @@ public static class StringExtensions
 ".ToHtml())
 
 <MudDivider></MudDivider>
-
-<h2 id="syntax-highlighted-code-blocks">Syntax Highlighted Code Blocks</h2>
+<MudText Typo="Typo.h4">Syntax Highlighted Code Blocks</MudText>
 <MudText Typo="Typo.body1">I started out using the Markdig extension <a href="https://github.com/arthurrump/MarkdigExtensions">Markdig.SyntaxHighlighting</a> to add color to code blocks, but I thought the colors were a bit dull, so I switched it out with <a href="https://prismjs.com/">PrismJs</a>.</MudText>
 <MudText Typo="Typo.body1">To get Prism to colorize code blocks, here's what to do:</MudText>
 <ol>
@@ -114,8 +112,7 @@ public static class StringExtensions
 <MudText Typo="Typo.body1">And that's it!</MudText>
 
 <MudDivider></MudDivider>
-
-<h2 id="page-links-missbehaving">Page Links missbehaving</h2>
+<MudText Typo="Typo.h4">Page Links misbehaving</MudText>
 <MudText Typo="Typo.body1">I wanted to add a little section at the top with links to each part of this blog series, but I just couldn't get page links like this one to work:</MudText>
 
 @(@"
@@ -158,6 +155,6 @@ public static class StringExtensions
 ```
 ".ToHtml())
 <MudText Typo="Typo.body1">That should make links to the blog render nicely on Twitter, and Facebook.</MudText>
-<MudDivider></MudDivider>
-<h1 id="going-live">Going Live</h1>
+<MudDivider DividerType="DividerType.FullWidth"></MudDivider>
+<MudText Typo="Typo.h2">Going Live</MudText>
 <MudText Typo="Typo.body1">And with that, the website MVP was ready to go live! At this point, I announced the website and my plans on Twitter: <a href="https://twitter.com/NillerMedDild/status/1579210443687890946">https://twitter.com/NillerMedDild/status/1579210443687890946</a></MudText>

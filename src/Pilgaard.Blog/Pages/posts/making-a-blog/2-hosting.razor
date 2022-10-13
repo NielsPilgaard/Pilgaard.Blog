@@ -1,19 +1,22 @@
 ﻿@page "/posts/making-a-blog/2-hosting"
-@inherits PrismCodeBlockRenderer
+@inherits Pilgaard.Blog.Components.PrismCodeBlockRenderer
 
-<h1 id="making-a-blog-part-2">Making a blog with C# - Part 2 - Cloud Hosting</h1>
-
-<h2 id="blazor-server-or-wasm">Blazor Server or WASM</h2>
+<MudText Typo="Typo.h2">Making a blog with C# - Part 2</MudText>
+<MudText Typo="Typo.h4">Cloud Hosting</MudText>
+<MudDivider DividerType="DividerType.FullWidth"></MudDivider>
+<MudText Typo="Typo.h5">Blazor Server or WASM</MudText>
 <MudText Typo="Typo.body1">Blazor is a given, but whether to use Blazor Server or Web Assembly was a hard choice.</MudText>
 <MudText Typo="Typo.body1">I started out with Blazor WASM, but got a bit overwhelmed by all the unknowns, and limitations, and switched to Blazor Server.</MudText>
 <MudText Typo="Typo.body1">I work with dotnet 6 worker services, so Blazor Server felt like the more comfortable choice.</MudText>
-<h2 id="hosting">Hosting</h2>
+<MudText Typo="Typo.h5">Hosting</MudText>
 <MudText Typo="Typo.body1">I decided on using Azure for hosting - it feels like the natural choice for dotnet, and I've used it a bit in the past.</MudText>
 <MudText Typo="Typo.body1">So I created a pay-as-you-go subscription, and a resource group, hoping that'd be enough to get me started.</MudText>
 <MudText Typo="Typo.body1">A little googling had shown me that I'd need to use both Azure App Service and Azure SignalR Services for a Blazor Server app, and that I should be able to provision it through Visual Studio when publishing inititally.</MudText>
-<MudText Typo="Typo.body1">Here are the docs I used: <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/server?view=aspnetcore-6.0">https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/server?view=aspnetcore-6.0</a></MudText>
-<h2 id="provisioning">Provisioning</h2>
-<h3 id="azure-signalr-service">Azure SignalR Service</h3>
+<MudText Typo="Typo.body1">Here are the docs I used: <MudLink Href="https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/server?view=aspnetcore-6.0">https://learn.microsoft.com/en-us/aspnet/core/blazor/host-and-deploy/server?view=aspnetcore-6.0</MudLink></MudText>
+
+<MudText Typo="Typo.h5">Provisioning</MudText>
+<MudDivider DividerType="DividerType.FullWidth"></MudDivider>
+<MudText Typo="Typo.h6">Azure SignalR Service</MudText>
 <MudText Typo="Typo.body1">The first thing I had to do was add a Service Dependency to Azure SignalR Service through Visual Studio:</MudText>
 <ul>
     <li>Right-clicked on the project and clicked <code>Publish</code></li>
@@ -21,7 +24,8 @@
     <li>Found <code>Azure SignalR Service</code> in the list, and completed the steps to provision it</li>
 </ul>
 <MudText Typo="Typo.body1">I started out saving the generated connection string in Azure KeyVault, but I had trouble launching the app locally after that, and switched to using a local <code>secret.json</code> file.</MudText>
-<h3 id="azure-app-service">Azure App Service</h3>
+<MudText Typo="Typo.h6">Azure App Service</MudText>
+
 <MudText Typo="Typo.body1">Next up: Provisioning the App Service that was going to host the Blazor website. I did the following to set that up:</MudText>
 <ul>
     <li>Right-clicked on the project and clicked <code>Publish</code> (again)</li>
@@ -37,7 +41,8 @@
 </ul>
 <MudText Typo="Typo.body1">When it was created, I went into <code>Configuration</code> and added <code>Azure__SignalR__ConnectionString</code> as an Application Setting-</MudText>
 <MudText Typo="Typo.body1">I chose Application Setting over Connection string to have it injected as an environment variable. I knew that'd work, and I wasn't sure if adding it as a Connection string would just work out of the box.</MudText>
-<h1 id="summary">Summary</h1>
+<MudText Typo="Typo.h5">Summary</MudText>
+
 <MudText Typo="Typo.body1">I decided on using Blazor Server instead of WASM, and Azure for hosting.</MudText>
 <MudText Typo="Typo.body1">What I ended up with was the following resources in Azure:</MudText>
 <ul>
