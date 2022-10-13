@@ -1,0 +1,8 @@
+﻿@font-face {
+    font-family: mallanna;
+    src: url(../fonts/mallanna-regular.ttf);
+}
+
+.logo-text {
+    font-family: mallanna !important;
+}
