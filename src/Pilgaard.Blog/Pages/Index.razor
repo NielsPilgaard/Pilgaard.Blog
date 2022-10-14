@@ -1,41 +1,10 @@
 ﻿@page "/"
-@using Pilgaard.Blog.Extensions
-@inject IJSRuntime JsRuntime
 
-<h2>Welcome to my work-in-progress blog!</h2>
-<p>I'll be writing about making it as I progress.</p>
-<hr />
-<h3>Blog Building Series</h3>
-<ul style="list-style: none; display: contents">
-    @* ReSharper disable Html.IdNotResolved *@
-    <li><a href="#making-a-blog-part-1" onclick="event.stopPropagation();">Part 1: Planning</a></li>
-    <li><a href="#making-a-blog-part-2" onclick="event.stopPropagation();">Part 2: Cloud Hosting</a></li>
-    <li><a href="#making-a-blog-part-3" onclick="event.stopPropagation();">Part 3: Building the website</a></li>
-</ul>
-<hr />
-@foreach (var blogPost in _blogPosts)
+<MudText Typo="Typo.h4">Welcome to my work-in-progress blog!</MudText>
+<MudText Typo="Typo.h6" Class="mt-4 mb-16">I'll be writing posts about making the Blog as I progress.</MudText>
+
+@foreach (var blogPostSeries in BlogPosts.AllBlogPostSeries)
 {
-    <br />
-    <br />
-    @blogPost
+    <BlogPostSeriesComponent BlogPostSeries="@blogPostSeries"></BlogPostSeriesComponent>
 }
 
-@code {
-    private readonly List<MarkupString> _blogPosts = new();
-    protected override async Task OnInitializedAsync()
-    {
-        var postsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Posts");
-        var fileNames = Directory.EnumerateFiles(postsPath, "*.md", SearchOption.TopDirectoryOnly);
-        foreach (var fileName in fileNames)
-        {
-            var text = await File.ReadAllTextAsync(fileName);
-            _blogPosts.Add(text.ToHtml());
-        }
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        await JsRuntime.InvokeVoidAsync("window.Prism.highlightAll");
-        await base.OnAfterRenderAsync(firstRender);
-    }
-}

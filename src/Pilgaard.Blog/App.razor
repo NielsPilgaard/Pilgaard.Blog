@@ -7,7 +7,9 @@
         <NotFound>
             <PageTitle>Not found</PageTitle>
             <LayoutView Layout="@typeof(MainLayout)">
-                <p role="alert">Sorry, there's nothing at this address.</p>
+                <MudText UserAttributes="@(new Dictionary<string, object> {["role"] = "alert"})">
+                    Sorry, there's nothing at this address.
+                </MudText>
             </LayoutView>
         </NotFound>
     </Router>

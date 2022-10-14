@@ -1,9 +1,12 @@
+using MudBlazor.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = ConfigureServices(builder);
 await ConfigureRequestPipeline(app).RunAsync();
 
 static WebApplication ConfigureServices(WebApplicationBuilder builder)
 {
+    builder.Services.AddMudServices();
     builder.Services.AddSignalR().AddAzureSignalR(options =>
     {
         options.ServerStickyMode =
@@ -12,7 +15,6 @@ static WebApplication ConfigureServices(WebApplicationBuilder builder)
 
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
-
     return builder.Build();
 }
 

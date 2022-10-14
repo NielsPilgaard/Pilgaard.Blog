@@ -1,13 +1,42 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <nav class="sidebar">
-        <NavMenu />
-    </nav>
+<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" Theme="CustomTheme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
-    <main>
-        <article class="content px-4">
+<MudLayout>
+    <AppBar></AppBar>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Medium" Class="my-4 pt-4">
             @Body
-        </article>
-    </main>
-</div>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    private bool _isDarkMode = true;
+    private MudThemeProvider _mudThemeProvider = null!;
+    static readonly MudTheme CustomTheme = new()
+        {
+            Typography = new Typography
+            {
+                Default = new Default
+                {
+                    FontFamily = new[] { "Roboto", "Helvetica", "Arial", "sans-serif" },
+                    FontSize = "1rem",
+                    FontWeight = 400,
+                    LetterSpacing = ".00938em",
+                    LineHeight = 1.5,
+                    TextTransform = "none"
+                }
+            }
+        };
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
+            StateHasChanged();
+        }
+    }
+}
