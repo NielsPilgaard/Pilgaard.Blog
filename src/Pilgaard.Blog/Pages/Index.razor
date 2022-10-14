@@ -1,45 +1,22 @@
 ﻿@page "/"
 
-<MudText Typo="Typo.h2">Welcome to my work-in-progress blog!</MudText>
-<MudText Typo="Typo.h6" Class="ml-2">I'll be writing about making it as I progress.</MudText>
-<MudDivider></MudDivider>
+<MudText Typo="Typo.h4">Welcome to my work-in-progress blog!</MudText>
+<MudText Typo="Typo.h6" Class="mt-4 mb-16">I'll be writing posts about making the Blog as I progress.</MudText>
 
-@foreach (var blogPost in BlogPosts.GroupBy(e => e.BlogPostSeries))
+@foreach (var blogPostSeries in AllBlogPostSeries)
 {
-    <MudText Typo="Typo.h2">@blogPost.Key.Value.DisplayName</MudText>
-    @foreach (var post in blogPost)
-    {
-        <MudNavLink Href="@post.RelativeUrl"><MudText>@post.DisplayName</MudText></MudNavLink>
-    }
+    <BlogPostSeriesComponent BlogPostSeries="@blogPostSeries"></BlogPostSeriesComponent>
 }
 
 @code {
-    private static readonly BlogPostSeries MakingABlog = new("Making a Blog", "making-a-blog", 1, "blazor");
-    private static readonly BlogPost[] BlogPosts = {
-        new("Part 1: Planning", "1-planning",new DateOnly(2022, 10, 9), MakingABlog, 1, MakingABlog.Tags + "planning"),
-        new("Part 2: Hosting", "2-hosting",new DateOnly(2022, 10, 9), MakingABlog, 1, MakingABlog.Tags + "hosting", "azure"),
-        new("Part 3: Building the MVP", "3-building-the-mvp", new DateOnly(2022, 10, 9), MakingABlog, 1, MakingABlog.Tags + "prismjs", "seo"),
-    };
-
-
-}
-@code {
-    internal readonly record struct BlogPostSeries(
-        string DisplayName,
-        string PathName,
-        int Order,
-        params string[] Tags);
-
-    internal readonly record struct BlogPost(
-        string DisplayName,
-        string PathName,
-        DateOnly PublishDate,
-        BlogPostSeries? BlogPostSeries = null,
-        int NumberInSeries = 1,
-        params string[] Tags)
+    private static readonly BlogPostSeries MakingABlog = new("Making a Blog", "making-a-blog", 1, new BlogPost[]
     {
-        internal string RelativeUrl => BlogPostSeries is null ?
-            $"posts/{PathName}" :
-            $"posts/{BlogPostSeries.Value.PathName}/{PathName}";
-    }
+        new("Planning", "1-planning", new DateOnly(2022, 10, 9), 1, "planning"),
+        new("Hosting on Azure", "2-hosting",new DateOnly(2022, 10, 9),  2, "hosting", "azure"),
+        new("Building the MVP", "3-building-the-mvp", new DateOnly(2022, 10, 9), 3, "prismjs", "seo"),
+        new("Improving Appearances", "4-improving-appearances", new DateOnly(2022, 10, 14), 4, "mudblazor", "css"),
+
+    }, "blazor");
+    private static readonly BlogPostSeries[] AllBlogPostSeries = { MakingABlog };
+
 }
