@@ -25,3 +25,7 @@ ul {
     ul li ul {
         list-style: circle;
     }
+
+code {
+    color: var(--mud-palette-secondary)
+}

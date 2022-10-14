@@ -2,7 +2,9 @@
 @using Pilgaard.Blog.Extensions
 @inherits PrismCodeBlockRenderer
 
-<MudText Typo="Typo.h2">Making a blog with C# - Part 3 - Building the MVP</MudText>
+<MudText Typo="Typo.h4" Color="Color.Secondary">Making a blog with C# - Part 3</MudText>
+<MudText Typo="Typo.h2">Building the MVP</MudText>
+<MudDivider DividerType="DividerType.FullWidth"></MudDivider>
 <MudText>
     The first couple of blog posts are simply <code>.md</code> files stored in my project.
     In order to actually display them on the website, I added the code below to <code>Index.razor</code>:
@@ -45,8 +47,7 @@
     <li>Convert their text to HTML</li>
     <li>Render the HTML</li>
 </ul>
-<MudDivider></MudDivider>
-<MudText Typo="Typo.h3">Rendering Markdown with Markdig</MudText>
+<MudText Typo="Typo.h4" Color="Color.Secondary" Class="mt-6 mb-2">Rendering Markdown with Markdig</MudText>
 <MudText>I used <a href="https://github.com/xoofx/markdig">Markdig</a> to convert markdown to HTML, through an extension method:</MudText>
 
 @(@"
@@ -68,8 +69,7 @@ public static class StringExtensions
 ```
 ".ToHtml())
 
-<MudDivider></MudDivider>
-<MudText Typo="Typo.h4">Syntax Highlighted Code Blocks</MudText>
+<MudText Typo="Typo.h4" Color="Color.Secondary" Class="mt-6 mb-2">Syntax Highlighted Code Blocks</MudText>
 <MudText>I started out using the Markdig extension <a href="https://github.com/arthurrump/MarkdigExtensions">Markdig.SyntaxHighlighting</a> to add color to code blocks, but I thought the colors were a bit dull, so I switched it out with <a href="https://prismjs.com/">PrismJs</a>.</MudText>
 <MudText>To get Prism to colorize code blocks, here's what to do:</MudText>
 <ol>
@@ -111,8 +111,7 @@ public static class StringExtensions
 
 <MudText>And that's it!</MudText>
 
-<MudDivider></MudDivider>
-<MudText Typo="Typo.h4">Page Links misbehaving</MudText>
+<MudText Typo="Typo.h4" Color="Color.Secondary" Class="mt-6 mb-2">Page Links misbehaving</MudText>
 <MudText>I wanted to add a little section at the top with links to each part of this blog series, but I just couldn't get page links like this one to work:</MudText>
 
 @(@"
@@ -136,9 +135,8 @@ public static class StringExtensions
 ".ToHtml())
 <MudText>The caveat is that this will stop any other <code>onclick</code> EventHandler from firing for that specific element, but I can live with that.</MudText>
 <MudText>Credit to <a href="https://github.com/dotnet/aspnetcore/issues/8393#issuecomment-526545768">SQL-MisterMagoo</a> for the workaround :D</MudText>
-<MudDivider></MudDivider>
 
-<h2 id="accidental-seo">Accidental SEO</h2>
+<MudText Typo="Typo.h4" Color="Color.Secondary" Class="mt-6 mb-2">Accidental SEO</MudText>
 <MudText>While adding Prism to <code>_Layout.cstml</code>, I couldn't help myself and added some meta tags while I was in there:</MudText>
 
 @(@"
@@ -155,6 +153,6 @@ public static class StringExtensions
 ```
 ".ToHtml())
 <MudText>That should make links to the blog render nicely on Twitter, and Facebook.</MudText>
-<MudDivider DividerType="DividerType.FullWidth"></MudDivider>
-<MudText Typo="Typo.h2">Going Live</MudText>
-<MudText>And with that, the website MVP was ready to go live! At this point, I announced the website and my plans on Twitter: <a href="https://twitter.com/NillerMedDild/status/1579210443687890946">https://twitter.com/NillerMedDild/status/1579210443687890946</a></MudText>
+
+<MudText Typo="Typo.h3" Color="Color.Secondary" Class="mt-6 mb-2">Going Live</MudText>
+<MudText>And with that, the website MVP was ready to go live! At this point, I announced the website and my plans on Twitter: <MudLink Href="https://twitter.com/NillerMedDild/status/1579210443687890946">https://twitter.com/NillerMedDild/status/1579210443687890946</MudLink></MudText>
