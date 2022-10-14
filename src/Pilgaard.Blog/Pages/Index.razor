@@ -3,20 +3,8 @@
 <MudText Typo="Typo.h4">Welcome to my work-in-progress blog!</MudText>
 <MudText Typo="Typo.h6" Class="mt-4 mb-16">I'll be writing posts about making the Blog as I progress.</MudText>
 
-@foreach (var blogPostSeries in AllBlogPostSeries)
+@foreach (var blogPostSeries in BlogPosts.AllBlogPostSeries)
 {
     <BlogPostSeriesComponent BlogPostSeries="@blogPostSeries"></BlogPostSeriesComponent>
 }
 
-@code {
-    private static readonly BlogPostSeries MakingABlog = new("Making a Blog", "making-a-blog", 1, new BlogPost[]
-    {
-        new("Planning", "1-planning", new DateOnly(2022, 10, 9), 1, "planning"),
-        new("Hosting on Azure", "2-hosting",new DateOnly(2022, 10, 9),  2, "hosting", "azure"),
-        new("Building the MVP", "3-building-the-mvp", new DateOnly(2022, 10, 9), 3, "prismjs", "seo"),
-        new("Improving Appearances", "4-improving-appearances", new DateOnly(2022, 10, 14), 4, "mudblazor", "css"),
-
-    }, "blazor");
-    private static readonly BlogPostSeries[] AllBlogPostSeries = { MakingABlog };
-
-}
