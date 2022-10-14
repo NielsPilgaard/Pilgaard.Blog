@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" />
+<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" Theme="CustomTheme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -16,7 +16,21 @@
 @code {
     private bool _isDarkMode = true;
     private MudThemeProvider _mudThemeProvider = null!;
-
+    static readonly MudTheme CustomTheme = new()
+        {
+            Typography = new Typography
+            {
+                Default = new Default
+                {
+                    FontFamily = new[] { "Roboto", "Helvetica", "Arial", "sans-serif" },
+                    FontSize = "1rem",
+                    FontWeight = 400,
+                    LetterSpacing = ".00938em",
+                    LineHeight = 1.5,
+                    TextTransform = "none"
+                }
+            }
+        };
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
