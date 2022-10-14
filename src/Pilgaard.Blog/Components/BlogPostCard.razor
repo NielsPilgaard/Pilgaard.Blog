@@ -1,13 +1,15 @@
 ﻿<MudCard Outlined="true" Style="min-width: 250px" Elevation="5">
-    <MudCardHeader>
-        <CardHeaderContent>
-            <MudText Typo="Typo.subtitle1" Color="Color.Primary">Part @BlogPost.NumberInSeries</MudText>
-            <MudText Typo="Typo.h5">@BlogPost.DisplayName</MudText>
-        </CardHeaderContent>
-    </MudCardHeader>
-    <MudCardActions>
-        <MudButton Variant="Variant.Text" Href="@BlogPostSeries.GetRelativePath(BlogPost)" Color="Color.Primary">Read More</MudButton>
-    </MudCardActions>
+    <MudNavLink Style="height: 100%" Href="@BlogPostSeries.GetRelativePath(BlogPost)">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.subtitle1" Color="Color.Primary">Part @BlogPost.NumberInSeries</MudText>
+                <MudText Typo="Typo.h5">@BlogPost.DisplayName</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        @*<MudCardContent>
+        <MudText Typo="Typo.caption" Color="Color.Primary">@string.Join(" ", BlogPost.Tags.Union(BlogPostSeries.Tags).Select(tag => $"#{tag}"))</MudText>
+        </MudCardContent>*@
+    </MudNavLink>
 </MudCard>
 
 @code {
