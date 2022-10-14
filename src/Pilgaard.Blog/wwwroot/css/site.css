@@ -17,3 +17,11 @@ ol, ul {
     letter-spacing: var(--mud-typography-body1-letterspacing);
     text-transform: var(--mud-typography-body1-text-transform);
 }
+
+ul {
+    list-style: initial;
+}
+
+    ul li ul {
+        list-style: circle;
+    }
