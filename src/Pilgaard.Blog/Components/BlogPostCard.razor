@@ -1,0 +1,20 @@
+﻿<MudCard Outlined="true" Style="min-width: 250px" Elevation="5">
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.subtitle1" Color="Color.Primary">Part @BlogPost.NumberInSeries</MudText>
+            <MudText Typo="Typo.h5">@BlogPost.DisplayName</MudText>
+        </CardHeaderContent>
+    </MudCardHeader>
+    <MudCardActions>
+        <MudButton Variant="Variant.Text" Href="@BlogPostSeries.GetRelativePath(BlogPost)" Color="Color.Primary">Read More</MudButton>
+    </MudCardActions>
+</MudCard>
+
+@code {
+    [Parameter]
+    public BlogPost BlogPost { get; set; }
+
+    [Parameter]
+    public BlogPostSeries BlogPostSeries { get; set; } = null!;
+
+}
