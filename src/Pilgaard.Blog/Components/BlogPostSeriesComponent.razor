@@ -1,0 +1,13 @@
+﻿<MudText Typo="Typo.h3" Color="Color.Secondary" Class="mt-8 mb-4">@BlogPostSeries.DisplayName</MudText>
+
+<MudStack Style="overflow-x: scroll" Row="true">
+    @foreach (var blogPost in BlogPostSeries.BlogPosts)
+    {
+        <BlogPostCard BlogPost="@blogPost" BlogPostSeries="@BlogPostSeries"></BlogPostCard>
+    }
+</MudStack>
+
+@code {
+    [Parameter]
+    public BlogPostSeries BlogPostSeries { get; set; } = null!;
+}
