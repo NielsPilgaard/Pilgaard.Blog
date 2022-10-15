@@ -3,9 +3,18 @@
     src: url(../fonts/mallanna-regular.ttf);
 }
 
-.logo-text {
-    font-family: mallanna !important;
-    font-size: 5.15vw;
+@media screen and (max-width: 1500px) {
+    .logo-text {
+        font-family: mallanna !important;
+        font-size: 5vw;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .logo-text {
+        font-family: mallanna !important;
+        font-size: 75px;
+    }
 }
 
 ol, ul {
