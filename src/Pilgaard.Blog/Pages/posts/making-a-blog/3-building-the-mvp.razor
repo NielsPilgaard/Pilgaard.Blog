@@ -72,31 +72,29 @@ public static class StringExtensions
 <MudText Typo="Typo.h4" Color="Color.Secondary" Class="mt-6 mb-2">Syntax Highlighted Code Blocks</MudText>
 <MudText>I started out using the Markdig extension <a href="https://github.com/arthurrump/MarkdigExtensions">Markdig.SyntaxHighlighting</a> to add color to code blocks, but I thought the colors were a bit dull, so I switched it out with <a href="https://prismjs.com/">PrismJs</a>.</MudText>
 <MudText>To get Prism to colorize code blocks, here's what to do:</MudText>
-<ol>
+<ul>
     <li>Customize and download Prism from <a href="https://prismjs.com/download.html">https://prismjs.com/download.html</a></li>
     <li>Put the <code>prism.js</code> and <code>prism.css</code> files in the <code>wwwroot</code> folder of the project.</li>
     <li>Add links to the files in the <code>_Layout.cshtml</code>:</li>
-</ol>
-
+</ul>
 @(@"
 ```html
 <head>
-  ...
-    <link href=""css/prism.css"" rel=""stylesheet"" />
+...
+<link href=""css/prism.css"" rel=""stylesheet"" />
 </head>
 
 <body>
-  ...
-    <script src=""scripts/prism.js""></script>
+...
+<script src=""scripts/prism.js""></script>
 </body>
 ```
-".ToHtml())
-
-<ol>
+    ".ToHtml())
+<ul>
     <li>Add this function to the page that should be highlighted:</li>
-</ol>
+</ul>
 @(@"
-```html
+```csharp
 @inject IJSRuntime JsRuntime
 
 @code {
