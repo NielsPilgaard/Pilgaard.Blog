@@ -20,14 +20,30 @@
     <br />
     Then I changed all <code>p</code> tags to <code>MudText</code>, leveraging the default styling of MudBlazor.
     <br />
+    <br />
     In order to un-break code blocks, I figured out I could use string literals
     and then convert them with my old markdown to HTML processor. It had to be string literals, because otherwise
-    HTML wouldn't be shown correctly "as code".
+    HTML wouldn't be shown correctly "as code":
     <br />
-    I can't actually display the trick because of the @@ used, but it's used in most of the blog posts in this series:
-    <MudLink Target="_blank" Href="https://github.com/NielsPilgaard/Pilgaard.Blog/blob/master/src/Pilgaard.Blog/Pages/posts/making-a-blog">Source Code</MudLink>
-
+    <br />
 </MudText>
+<MudText Typo="Typo.h6">Code</MudText>
+@(@"
+````csharp
+@(@""
+```html
+<a href=""#item-id-here""></a>
+```
+"".ToHtml())
+````
+".ToHtml())
+<br />
+<MudText Typo="Typo.h6">Output</MudText>
+@(@"
+```html
+<a href=""#item-id-here""></a>
+```
+".ToHtml())
 <MudText Typo="Typo.h4" Color="Color.Secondary" Class="mt-6 mb-2">MudBlazor</MudText>
 <MudText>
     I wanted to try out a Blazor Component library to improve my chances of making a nice looking blog.
