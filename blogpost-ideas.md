@@ -23,6 +23,8 @@
 
 - Request/Response
 - Publish/Subscribe
+- Competing Consumers
+- Idempotent Consumers
 
 ## Open Source Work
 
