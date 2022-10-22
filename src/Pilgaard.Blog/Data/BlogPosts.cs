@@ -9,7 +9,8 @@ public static class BlogPosts
         new("Planning", "1-planning", new DateOnly(2022, 10, 9), 1, "planning"),
         new("Hosting on Azure", "2-hosting",new DateOnly(2022, 10, 9),  2, "hosting", "azure"),
         new("Building the MVP", "3-building-the-mvp", new DateOnly(2022, 10, 9), 3, "prismjs", "seo"),
-        new("Improving Appearances", "4-improving-appearances", new DateOnly(2022, 10, 15), 4, "mudblazor", "css", "html"),
+        new("Improving Appearances", "4-improving-appearances", new DateOnly(2022, 10, 19), 4, "mudblazor", "css", "html"),
+        new("Adding Comments", "5-adding-comments", new DateOnly(2022, 10, 22), 5, "giscus", "github"),
 
     }, "blazor");
 
