@@ -1,9 +1,4 @@
-﻿### Making a blog with C# - Part 2
-# Cloud Hosting
-<hr />
-<br />
-
-## Blazor Server or WASM
+﻿## Blazor Server or WASM
 Blazor is a given, but whether to use Blazor Server or Web Assembly was a hard choice.
 I started out with Blazor WASM, but got a bit overwhelmed by all the unknowns, and limitations, and switched to Blazor Server.
 I work with dotnet 6 worker services, so Blazor Server felt like the more comfortable choice.

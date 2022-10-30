@@ -1,6 +1,4 @@
-﻿### Making a blog with C# - Part 1
-# Planning
-I've been wanting to try out Blazor for a while now, so I decided
+﻿I've been wanting to try out Blazor for a while now, so I decided
 on making a blog with it, so I could share my experiences along the way.
 
 To share as much of the experience as possible, I'm going to make the blog available as

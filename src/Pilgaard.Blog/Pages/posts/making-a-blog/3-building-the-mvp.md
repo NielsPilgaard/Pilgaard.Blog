@@ -1,8 +1,4 @@
-﻿### Making a blog with C# - Part 3
-# Building the MVP
-<hr />
-
-The first couple of blog posts are simply <code>.md</code> files stored in my project.
+﻿The first couple of blog posts are simply <code>.md</code> files stored in my project.
 
 In order to actually display them on the website, I added the code below to <code>Index.razor</code>:
 

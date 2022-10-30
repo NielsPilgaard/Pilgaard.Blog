@@ -1,10 +1,4 @@
-﻿### Making a blog with C# - Part 5
-# Adding Comments
-<hr />
-
-
-I decided on using <a href="https://giscus.app/" target="_blank">Giscus</a> as my commenting system, as it seemed the simplest and easiest to set up.
-<br />
+﻿I decided on using <a href="https://giscus.app/" target="_blank">Giscus</a> as my commenting system, as it seemed the simplest and easiest to set up.
 
 To set up Giscus, there are a few prerequisites: 
 
@@ -18,7 +12,6 @@ To set up Giscus, there are a few prerequisites:
     </li>
 </ul>
 
-<br />
 Adding it to a Blazor website isn't as straight forward as following the guide though, 
 and after a lot of head-scratching, 
 <a href="https://github.com/giscus/giscus/issues/740" target="_blank">
@@ -30,11 +23,11 @@ on the Giscus issue tracker asking for help. They quickly answered and got me ba
 ## GiscusBlazor
 
 There's a Giscus Blazor component!
-<br />
+
 <a href="https://github.com/Jisu-Woniu/giscus-blazor" target="_blank">
     https://github.com/Jisu-Woniu/giscus-blazor
 </a>
-<br />
+
 To set it up, start by adding the nuget <code>GiscusBlazor</code>:
 
 
@@ -73,7 +66,7 @@ The required values can easily be configured using the Configuration section on
 <a href="https://giscus.app/" target="_blank">
     https://giscus.app/
 </a>
-<br />
+
 In my case, it looked like this:
 
 
@@ -126,7 +119,7 @@ We learned how to add a comment area to a page using
 <a href="https://giscus.app/" target="_blank">Giscus</a>
 and 
 <a href="https://github.com/Jisu-Woniu/giscus-blazor" target="_blank">GiscusBlazor</a>, by leveraging the GitHub Discussions API.
-<br />
+
 Now that it's possible, I hope you'll leave a comment or reaction below 😄
     
     

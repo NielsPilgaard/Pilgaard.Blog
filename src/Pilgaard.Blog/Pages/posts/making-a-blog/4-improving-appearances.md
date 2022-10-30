@@ -1,8 +1,4 @@
-﻿### Making a blog with C# - Part 4
-# Improving Appearances
-<hr />
-
-## Razor vs Markdown
+﻿## Razor vs Markdown
 
 After experimenting with MudBlazor I made the decision to use <code>.razor</code> files for blog posts instead of markdown.
 Using markdown is super convenient, but Blazor Components can do so much more.
