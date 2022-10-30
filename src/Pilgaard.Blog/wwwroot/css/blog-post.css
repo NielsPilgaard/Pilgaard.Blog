@@ -31,7 +31,8 @@
     letter-spacing: var(--mud-typography-h4-letterspacing);
     text-transform: var(--mud-typography-h4-text-transform);
     color: var(--mud-palette-secondary);
-    margin-top: 16px;
+    margin-top: 24px;
+    margin-bottom: 8px;
 }
 
 .blog-post h3 {

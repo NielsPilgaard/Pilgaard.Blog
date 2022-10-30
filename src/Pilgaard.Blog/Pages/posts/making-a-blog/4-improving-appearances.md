@@ -1,4 +1,4 @@
-﻿## Making a blog with C# - Part 4
+﻿### Making a blog with C# - Part 4
 # Improving Appearances
 <hr />
 
@@ -79,7 +79,7 @@ It's possible to change mode depending on the system preference of the user:
 
 ## Social Media Links
 
-    As it turns out, making good looking links to Social Media websites is really easy with MudBlazor:
+As it turns out, making good looking links to Social Media websites is really easy with MudBlazor:
 
 
 ```csharp
