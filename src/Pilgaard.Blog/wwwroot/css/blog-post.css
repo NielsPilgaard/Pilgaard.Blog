@@ -74,7 +74,6 @@
     list-style: circle;
 }
 .blog-post code {
-    color: var(--mud-palette-secondary);
     background: #2d2d2d;
     padding: 0.25rem;
 }
