@@ -8,6 +8,32 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Pages\posts\making-a-blog\1-planning.md" />
+	  <None Remove="Pages\posts\making-a-blog\2-hosting.md" />
+	  <None Remove="Pages\posts\making-a-blog\3-building-the-mvp.md" />
+	  <None Remove="Pages\posts\making-a-blog\4-improving-appearances.md" />
+	  <None Remove="Pages\posts\making-a-blog\5-adding-comments.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Pages\posts\making-a-blog\1-planning.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Pages\posts\making-a-blog\2-hosting.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Pages\posts\making-a-blog\3-building-the-mvp.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Pages\posts\making-a-blog\4-improving-appearances.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Pages\posts\making-a-blog\5-adding-comments.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="GiscusBlazor" Version="2.3.0" />
 		<PackageReference Include="Markdig" Version="0.30.4" />
 		<PackageReference Include="Microsoft.Azure.SignalR" Version="1.18.3" />
