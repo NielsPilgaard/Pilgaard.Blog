@@ -1,0 +1,32 @@
+﻿@page "/posts/{blogPostSeriesName}/{blogPostName}"
+<article class="blog-post">
+    @BlogPostText
+</article>
+<PrismCodeBlockRenderer/>
+<GiscusComponent/>
+@code {
+    public BlogPost BlogPost { get; set; }
+    public BlogPostSeries? BlogPostSeries { get; set; }
+
+    [Parameter]
+    public string? BlogPostSeriesName { get; set; }
+
+    [Parameter]
+    public string BlogPostName { get; set; } = null!;
+
+    private MarkupString BlogPostText { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        BlogPostSeriesName ??= "general";
+
+        var pathPrefix = Path.Join(AppDomain.CurrentDomain.BaseDirectory, "Pages", "posts");
+        var path = BlogPostSeriesName is null ? 
+            Path.Join(pathPrefix, BlogPostName + ".md") :
+            Path.Join(pathPrefix, BlogPostSeriesName, BlogPostName + ".md");
+
+        var text = await File.ReadAllTextAsync(path);
+        BlogPostText = text.ToHtml();
+        await base.OnInitializedAsync();
+    }
+}
