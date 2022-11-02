@@ -17,28 +17,6 @@
     }
 }
 
-ol, ul {
-    margin: 0.75rem 0;
-    padding-left: 2rem;
-    font-size: var(--mud-typography-body1-size);
-    font-weight: var(--mud-typography-body1-weight);
-    line-height: var(--mud-typography-body1-lineheight);
-    letter-spacing: var(--mud-typography-body1-letterspacing);
-    text-transform: var(--mud-typography-body1-text-transform);
-}
-
-ul {
-    list-style: initial;
-}
-
-    ul li ul {
-        list-style: circle;
-    }
-
-code {
-    color: var(--mud-palette-secondary)
-}
-
 .giscus-frame {
     margin-top: 24px;
     width: 100%;

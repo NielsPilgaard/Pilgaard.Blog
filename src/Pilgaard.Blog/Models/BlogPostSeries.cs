@@ -1,15 +1,26 @@
-﻿namespace Pilgaard.Blog.Models
+﻿namespace Pilgaard.Blog.Models;
+
+public class BlogPostSeries
 {
-    public record BlogPostSeries(
-        string DisplayName,
-        string PathName,
-        int Order,
-        BlogPost[] BlogPosts,
-        params string[] Tags)
+    public BlogPostSeries(string title,
+        string description,
+        string pathName,
+        int order,
+        BlogPost[] blogPosts,
+        params string[] tags)
     {
-        public string GetRelativePath(BlogPost blogPost)
-        {
-            return "posts/" + PathName + "/" + blogPost.PathName;
-        }
+        Title = title;
+        Description = description;
+        PathName = pathName;
+        Order = order;
+        BlogPosts = blogPosts;
+        Tags = tags;
     }
+
+    public string Title { get; }
+    public string Description { get; }
+    public string PathName { get; }
+    public int Order { get; }
+    public BlogPost[] BlogPosts { get; }
+    public string[] Tags { get; }
 }

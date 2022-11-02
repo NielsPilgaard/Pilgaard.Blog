@@ -1,0 +1,88 @@
+.blog-post p {
+    margin-left: 0;
+    font-size: var(--mud-typography-body1-size);
+    font-family: var(--mud-typography-body1-family);
+    font-weight: var(--mud-typography-body1-weight);
+    line-height: var(--mud-typography-body1-lineheight);
+    letter-spacing: var(--mud-typography-body1-letterspacing);
+    text-transform: var(--mud-typography-body1-text-transform);
+}
+
+.blog-post a {
+    margin-left: 0;
+    font-size: var(--mud-typography-body1-size);
+    color: var(--mud-palette-info-lighten);
+}
+
+.blog-post h1 {
+    font-size: var(--mud-typography-h2-size);
+    font-family: var(--mud-typography-h2-family);
+    font-weight: var(--mud-typography-h2-weight);
+    line-height: var(--mud-typography-h2-lineheight);
+    letter-spacing: var(--mud-typography-h2-letterspacing);
+    text-transform: var(--mud-typography-h2-text-transform);
+}
+
+.blog-post h2 {
+    font-size: var(--mud-typography-h4-size);
+    font-family: var(--mud-typography-h4-family);
+    font-weight: var(--mud-typography-h4-weight);
+    line-height: var(--mud-typography-h4-lineheight);
+    letter-spacing: var(--mud-typography-h4-letterspacing);
+    text-transform: var(--mud-typography-h4-text-transform);
+    color: var(--mud-palette-secondary);
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.blog-post h3 {
+    font-size: var(--mud-typography-h5-size);
+    font-family: var(--mud-typography-h5-family);
+    font-weight: var(--mud-typography-h5-weight);
+    line-height: var(--mud-typography-h5-lineheight);
+    letter-spacing: var(--mud-typography-h5-letterspacing);
+    text-transform: var(--mud-typography-h5-text-transform);
+    color: var(--mud-palette-secondary);
+    margin-top: 16px;
+}
+
+.blog-post h4 {
+    font-size: var(--mud-typography-h6-size);
+    font-family: var(--mud-typography-h6-family);
+    font-weight: var(--mud-typography-h6-weight);
+    line-height: var(--mud-typography-h6-lineheight);
+    letter-spacing: var(--mud-typography-h6-letterspacing);
+    text-transform: var(--mud-typography-h6-text-transform);
+    color: var(--mud-palette-secondary);
+    margin-top: 16px;
+}
+
+.blog-post ol, ul {
+    margin: 0.75rem 0;
+    padding-left: 2rem;
+    font-size: var(--mud-typography-body1-size);
+    font-weight: var(--mud-typography-body1-weight);
+    line-height: var(--mud-typography-body1-lineheight);
+    letter-spacing: var(--mud-typography-body1-letterspacing);
+    text-transform: var(--mud-typography-body1-text-transform);
+}
+
+.blog-post ul {
+    list-style: initial;
+}
+
+.blog-post ul li ul {
+    list-style: circle;
+}
+.blog-post code {
+    background: #2d2d2d;
+    padding: 0.25rem;
+}
+
+.blog-post hr {
+    border: none;
+    height: 1px;
+    margin: 0;
+    flex-shrink: 0;
+    background-color: var(--mud-palette-divider);
+}
