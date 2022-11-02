@@ -1,20 +1,21 @@
-﻿<MudCard Style="width: 250px; height: 150px" Elevation="5">
+﻿<MudCard Style="width: 350px; height: 250px" Elevation="5">
     <MudNavLink Style="height: 100%" Href="@BlogPostSeries.GetRelativePath(BlogPost)">
         <MudCardHeader>
             <CardHeaderContent>
                 <MudText Typo="Typo.subtitle1" Color="Color.Primary">Part @BlogPost.NumberInSeries</MudText>
-                <MudText Typo="Typo.h5">@BlogPost.Title</MudText>
+                <MudText Typo="Typo.h5" Color="Color.Tertiary">@BlogPost.Title</MudText>
             </CardHeaderContent>
         </MudCardHeader>
-        @*<MudCardContent>
-        <MudText Typo="Typo.caption" Color="Color.Primary">@string.Join(" ", BlogPost.Tags.Union(BlogPostSeries.Tags).Select(tag => $"#{tag}"))</MudText>
-        </MudCardContent>*@
+        <MudCardContent Class="pt-0">
+            <MudText Typo="Typo.body1" Color="Color.Default">@BlogPost.Description</MudText>
+            <MudText Typo="Typo.caption" Color="Color.Primary">@string.Join(" ", BlogPost.Tags.Union(BlogPostSeries.Tags).Select(tag => $"#{tag}"))</MudText>
+        </MudCardContent>
     </MudNavLink>
 </MudCard>
 
 @code {
     [Parameter]
-    public BlogPost BlogPost { get; set; }
+    public BlogPost BlogPost { get; set; } = null!;
 
     [Parameter]
     public BlogPostSeries BlogPostSeries { get; set; } = null!;

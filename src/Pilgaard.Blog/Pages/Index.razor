@@ -1,7 +1,10 @@
 ﻿@page "/"
 
-<MudText Typo="Typo.h4">Welcome to my work-in-progress blog!</MudText>
-<MudText Typo="Typo.h6" Class="mt-4 mb-16">I'll be writing posts about making the Blog as I progress.</MudText>
+<header style="text-align: center">
+    <MetadataComponent Title="@DefaultMetadata.Title" Description="@DefaultMetadata.Description" Tags="@DefaultMetadata.Tags" />
+    <MudText Typo="Typo.h4">Welcome to my work-in-progress blog!</MudText>
+    <MudText Typo="Typo.h6" Class="mt-4 mb-16">I'll be writing posts about making it along the way.</MudText>
+</header>
 
 @foreach (var blogPostSeries in BlogPosts.AllBlogPostSeries)
 {
