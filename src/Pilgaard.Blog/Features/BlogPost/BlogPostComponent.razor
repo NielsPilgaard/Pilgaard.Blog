@@ -30,6 +30,7 @@
         $"{DefaultMetadata.Title} | {BlogPost.Title} | {BlogPostSeries.Title} - Part {BlogPost.NumberInSeries}";
 
     private string Tags => string.Join(", ", BlogPost.Tags, BlogPostSeries?.Tags);
+    
     private MarkupString BlogPostText { get; set; }
 
     protected override async Task OnInitializedAsync()
@@ -45,7 +46,7 @@
     {
         BlogPostSeriesPathName ??= "general";
         
-        BlogPostSeries = BlogPosts.AllBlogPostSeries.FirstOrDefault(series => series.PathName == BlogPostSeriesPathName);
+        BlogPostSeries = BlogPostData.AllBlogPostSeries.FirstOrDefault(series => series.PathName == BlogPostSeriesPathName);
         
         BlogPost = BlogPostSeries?.BlogPosts.FirstOrDefault(blogPost => blogPost.PathName == BlogPostPathName)!;
         
@@ -57,5 +58,4 @@
         return path;
 
     }
-
 }

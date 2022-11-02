@@ -1,8 +1,6 @@
-﻿using Pilgaard.Blog.Models;
+﻿namespace Pilgaard.Blog.Features.BlogPost;
 
-namespace Pilgaard.Blog.Data;
-
-public static class BlogPosts
+public static class BlogPostData
 {
     public static readonly BlogPostSeries MakingABlog = new(
         title: "Making a Blog with C#",

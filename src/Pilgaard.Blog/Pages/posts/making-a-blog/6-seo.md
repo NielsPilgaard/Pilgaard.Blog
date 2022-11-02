@@ -40,6 +40,7 @@ Usage in `Index.razor`
 ```csharp
 <MetadataComponent Title="@DefaultMetadata.Title" Description="@DefaultMetadata.Description" Tags="@DefaultMetadata.Tags" />
 ```
+
 Usage in `BlogPostComponent.razor`
 ```csharp
 <MetadataComponent 
@@ -55,7 +56,7 @@ Usage in `BlogPostComponent.razor`
     private string Tags => string.Join(", ", BlogPost.Tags, BlogPostSeries?.Tags);
 }
 ```
-*Only related code is shown here*
+*File trimmed for brevity*
 ```csharp
 
 ```

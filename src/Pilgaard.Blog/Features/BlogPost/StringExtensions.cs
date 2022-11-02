@@ -1,8 +1,7 @@
 ﻿using Markdig;
 using Microsoft.AspNetCore.Components;
-using Pilgaard.Blog.Models;
 
-namespace Pilgaard.Blog.Extensions;
+namespace Pilgaard.Blog.Features.BlogPost;
 
 public static class StringExtensions
 {
@@ -16,13 +15,5 @@ public static class StringExtensions
     {
         var htmlText = Markdown.ToHtml(text, MarkdownPipeline);
         return new MarkupString(htmlText);
-    }
-}
-
-public static class BlogPostExtensions
-{
-    public static string GetRelativePath(this BlogPostSeries blogPostSeries, BlogPost blogPost)
-    {
-        return "posts/" + blogPostSeries.PathName + "/" + blogPost.PathName;
     }
 }
