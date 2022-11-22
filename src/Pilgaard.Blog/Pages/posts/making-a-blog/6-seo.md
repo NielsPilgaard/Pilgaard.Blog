@@ -1,16 +1,8 @@
 ﻿
+I wanted to make links to my blog posts more accurate, so I needed to add some `<meta>` tags 
+to provide title, description and tags to the websites displaying links. 
 
-> Search engine optimization is the process of improving the quality and quantity of website traffic to a website or a web page from search engines. SEO targets unpaid traffic rather than direct traffic or paid traffic.
-
-```csharp
-public static class DefaultMetadata
-{
-    public const string Title = "Pilgaard | dotnet blog";
-    public const string Description = "Hi! I write about code - Particularly C#, but also PowerShell and the occasional JavaScript.";
-    public const string Tags = "blazor, dotnet, csharp, blog, programming";
-}
-```
-
+I wanted to use the data I already have for rendering blog post cards on the front page, so I figured I'd make a component for it:
 ```csharp
 <PageTitle>@Title</PageTitle>
 <HeadContent>
@@ -36,12 +28,30 @@ public static class DefaultMetadata
 }
 ```
 
+This uses the built-in `<PageTitle>` and `<HeadContent>` Component to update title and metadata respectively.
+
+The meta tags that start in `og` helps sites like Twitter and Facebook display the information in a nice way.
+
+To make use of the new `MetadataComponent`, I first removed the title and meta tags from `Index.razor`,
+and replaced it with this:
+
+
 Usage in `Index.razor`
 ```csharp
 <MetadataComponent Title="@DefaultMetadata.Title" Description="@DefaultMetadata.Description" Tags="@DefaultMetadata.Tags" />
 ```
+The defaults are defined in a separate file:
+```csharp
+public static class DefaultMetadata
+{
+    public const string Title = "Pilgaard | dotnet blog";
+    public const string Description = "Hi! I write about code - Particularly C#, but also PowerShell and the occasional JavaScript.";
+    public const string Tags = "blazor, dotnet, csharp, blog, programming";
+}
+```
 
-Usage in `BlogPostComponent.razor`
+To set it up for BlogPosts, I did the following in `BlogPostComponent.razor`:
+
 ```csharp
 <MetadataComponent 
     Title="@Title" 
@@ -57,9 +67,7 @@ Usage in `BlogPostComponent.razor`
 }
 ```
 *File trimmed for brevity*
-```csharp
 
-```
-```csharp
+## Summary
 
-```
+We've seen that adding SEO metadata to Blazor Server is a breeze using the built in `<PageTitle>` and `<HeadContent` components.
