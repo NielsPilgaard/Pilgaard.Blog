@@ -8,7 +8,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: src/Pilgaard.Blog/publish
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.PILGAARD_BLOG_PUBLISH_PROFILE }}
   CONFIGURATION: Release
-  DOTNET_VERSION: 6.x.x
+  DOTNET_VERSION: 7.x.x
   WORKING_DIRECTORY: src/Pilgaard.Blog
 jobs:
   build-and-deploy:
