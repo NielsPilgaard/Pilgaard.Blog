@@ -1,8 +1,6 @@
-﻿using Pilgaard.Blog.Models;
+﻿namespace Pilgaard.Blog.Features.BlogPost;
 
-namespace Pilgaard.Blog.Data;
-
-public static class BlogPosts
+public static class BlogPostData
 {
     public static readonly BlogPostSeries MakingABlog = new(
         title: "Making a Blog with C#",
@@ -47,14 +45,14 @@ public static class BlogPosts
                 numberInSeries: 5,
                 "giscus",
                 "github"),
-            //new(title: "SEO",
-            //    description: "In this post, we add Search Engine Optimizations to make the blog easier to find.",
-            //    pathName: "6-seo",
-            //    publishDate: new DateOnly(year: 2022,
-            //        month: 10,
-            //        day: 22),
-            //    numberInSeries: 6,
-            //    "seo"),
+            new(title: "SEO",
+                description: "In this post, we add Search Engine Optimizations to make the blog easier to find.",
+                pathName: "6-seo",
+                publishDate: new DateOnly(year: 2022,
+                    month: 10,
+                    day: 22),
+                numberInSeries: 6,
+                "seo"),
             //new (title: "",
             //    description: "",
             //    pathName: "",

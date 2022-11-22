@@ -1,0 +1,16 @@
+﻿<div style="text-align: center">
+    <MudText Class="mt-8" Color="Color.Secondary" Typo="Typo.h3">@BlogPostSeries.Title</MudText>
+    <MudDivider Class="mb-6" DividerType="DividerType.FullWidth"></MudDivider>
+    <MudText Class="mb-6" Typo="Typo.h6">@BlogPostSeries.Description.ToHtml()</MudText>
+
+</div>
+<div class="d-flex flex-wrap gap-2 justify-center">
+    @foreach (var blogPost in BlogPostSeries.BlogPosts)
+    {
+        <BlogPostCard BlogPost="@blogPost" BlogPostSeries="@BlogPostSeries"></BlogPostCard>
+    }
+</div>
+@code {
+    [Parameter]
+    public BlogPostSeries BlogPostSeries { get; set; } = null!;
+}

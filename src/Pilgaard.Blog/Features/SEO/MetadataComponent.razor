@@ -1,0 +1,22 @@
+﻿<PageTitle>@Title</PageTitle>
+<HeadContent>
+    <meta name="description" content="@Description" />
+    <meta name="og:title" content="@Title" />
+    <meta name="og:description" content="@Description" />
+
+    @if (Tags is not null)
+    {
+        <meta name="tags" content="@Tags" />
+    }
+</HeadContent>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = null!;
+
+    [Parameter]
+    public string Description { get; set; } = null!;
+
+    [Parameter]
+    public string? Tags { get; set; } // Comma separated list
+}

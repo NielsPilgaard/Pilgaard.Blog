@@ -1,4 +1,4 @@
-﻿namespace Pilgaard.Blog.Models;
+﻿namespace Pilgaard.Blog.Features.BlogPost;
 
 public class BlogPost
 {
