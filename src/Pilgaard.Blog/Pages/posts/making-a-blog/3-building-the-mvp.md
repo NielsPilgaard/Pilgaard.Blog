@@ -144,4 +144,4 @@ While adding Prism to <code>_Layout.cstml</code>, I couldn't help myself and add
 That should make links to the blog render nicely on Twitter, and Facebook.
 
 ## Going Live
-And with that, the website MVP was ready to go live! At this point, I announced the website and my plans on Twitter: <a href="https://twitter.com/NillerMedDild/status/1579210443687890946">https://twitter.com/NillerMedDild/status/1579210443687890946</a>
+And with that, the website MVP was ready to go live! At this point, I announced the website and my plans on Twitter: <a href="https://twitter.com/Niels_Pilgaard/status/1579210443687890946">https://twitter.com/Niels_Pilgaard/status/1579210443687890946</a>

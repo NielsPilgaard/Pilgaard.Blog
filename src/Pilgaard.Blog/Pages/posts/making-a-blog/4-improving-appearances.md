@@ -80,7 +80,7 @@ As it turns out, making good looking links to Social Media websites is really ea
 
 ```csharp
 <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Inherit" Link="https://www.linkedin.com/in/niels-pilgaard/" Title="My LinkedIn Profile" target="_blank" />
-<MudIconButton Icon="@Icons.Custom.Brands.Twitter" Color="Color.Inherit" Link="https://twitter.com/NillerMedDild" Title="My Twitter Profile" target="_blank" />
+<MudIconButton Icon="@Icons.Custom.Brands.Twitter" Color="Color.Inherit" Link="https://twitter.com/Niels_Pilgaard" Title="My Twitter Profile" target="_blank" />
 <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/NielsPilgaard" Title="My GitHub Profile" target="_blank" />
 ```
 
