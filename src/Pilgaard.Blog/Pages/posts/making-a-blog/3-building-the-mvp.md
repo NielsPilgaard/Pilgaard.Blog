@@ -1,6 +1,8 @@
-﻿The first couple of blog posts are simply <code>.md</code> files stored in my project.
+﻿## Rendering Posts
 
-In order to actually display them on the website, I added the code below to <code>Index.razor</code>:
+The first couple of blog posts are simply `.md` files stored in my project.
+
+In order to actually display them on the website, I added the code below to `Index.razor`:
 
 ```csharp
 @page "/"
@@ -27,19 +29,16 @@ In order to actually display them on the website, I added the code below to <cod
 ```
 
 This does the following:
-<ul>
-    <li>
-        Find all <code>.md</code> files that should be displayed
-        <ul>
-            <li>With this approach, files must be copied to the output directory on build</li>
-        </ul>
-    </li>
-    <li>Read the files</li>
-    <li>Convert their text to HTML</li>
-    <li>Render the HTML</li>
-</ul>
-##Rendering Markdown with Markdig
-I used <a href="https://github.com/xoofx/markdig">Markdig</a> to convert markdown to HTML, through an extension method:
+
+- Find all `.md` files that should be displayed
+    - With this approach, files must be copied to the output directory on build
+- Read the files
+- Convert their text to HTML
+- Render the HTML
+
+
+## Rendering Markdown with Markdig
+I used [Markdig](https://github.com/xoofx/markdig) to convert markdown to HTML, through an extension method:
 
 
 ```csharp
@@ -63,11 +62,11 @@ public static class StringExtensions
 ## Syntax Highlighted Code Blocks
 I started out using the Markdig extension <a href="https://github.com/arthurrump/MarkdigExtensions">Markdig.SyntaxHighlighting</a> to add color to code blocks, but I thought the colors were a bit dull, so I switched it out with <a href="https://prismjs.com/">PrismJs</a>.
 To get Prism to colorize code blocks, here's what to do:
-<ul>
-    <li>Customize and download Prism from <a href="https://prismjs.com/download.html">https://prismjs.com/download.html</a></li>
-    <li>Put the <code>prism.js</code> and <code>prism.css</code> files in the <code>wwwroot</code> folder of the project.</li>
-    <li>Add links to the files in the <code>_Layout.cshtml</code>:</li>
-</ul>
+
+- Customize and download Prism from <a href="https://prismjs.com/download.html">https://prismjs.com/download.html</a>
+- Put the `prism.js` and `prism.css` files in the `wwwroot` folder of the project.
+- Add links to the files in the `_Layout.cshtml`:
+
 
 ```html
 <head>
@@ -81,9 +80,9 @@ To get Prism to colorize code blocks, here's what to do:
 </body>
 ```
     
-<ul>
-    <li>Add this function to the page that should be highlighted:</li>
-</ul>
+
+- Add this function to the page that should be highlighted:
+
 
 ```csharp
 @inject IJSRuntime JsRuntime
@@ -115,18 +114,18 @@ After an intense googling session, I stumpled upon this issue:
 Apparently, this type of link just doesn't work in Blazor yet. Huh.
 
 Luckily, there's a workaround that works just fine for my use-case:
-Adding <code>onclick="event.stopPropagation();"</code>
+Adding `onclick="event.stopPropagation();"`
 
 
 ```html
 <a href="#item-id-here" onclick="event.stopPropagation();"></a>
 ```
 
-The caveat is that this will stop any other <code>onclick</code> EventHandler from firing for that specific element, but I can live with that.
+The caveat is that this will stop any other `onclick` EventHandler from firing for that specific element, but I can live with that.
 Credit to <a href="https://github.com/dotnet/aspnetcore/issues/8393#issuecomment-526545768">SQL-MisterMagoo</a> for the workaround :D
 
 ## Accidental SEO
-While adding Prism to <code>_Layout.cstml</code>, I couldn't help myself and added some meta tags while I was in there:
+While adding Prism to `_Layout.cstml`, I couldn't help myself and added some meta tags while I was in there:
 
 
 ```html
