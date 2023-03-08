@@ -1,0 +1,23 @@
+﻿@inject NavigationManager NavigationManager
+
+@if (BlogPost is null)
+{
+    return;
+}
+
+<MudButton Color="Color.Primary"
+           OnClick="@NavigateToBlogPost"
+           Variant="Variant.Filled"
+           EndIcon="@(Next ? Icons.Material.Filled.NavigateNext : Icons.Material.Filled.NavigateBefore)"
+           Size="Size.Small">
+    @(Next ? $"Next: {BlogPost.Title}" : $"Previous: {BlogPost.Title}")
+</MudButton>
+
+@code {
+    [Parameter] public BlogPost? BlogPost { get; set; } = null!;
+    [Parameter] public BlogPostSeries BlogPostSeries { get; set; } = null!;
+    [Parameter] public bool Next { get; set; }
+
+    private void NavigateToBlogPost() 
+        => NavigationManager.NavigateTo(BlogPostSeries.GetRelativePath(BlogPost!), true);
+}

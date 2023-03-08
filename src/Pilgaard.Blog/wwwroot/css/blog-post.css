@@ -78,6 +78,11 @@
     background: #2d2d2d;
     padding: 0.25rem;
 }
+.blog-post p code {
+    background: var(--mud-palette-primary-lighten);
+    padding: 0.25rem;
+    color: var(--mud-palette-primary-text);
+}
 
 .blog-post hr {
     border: none;
