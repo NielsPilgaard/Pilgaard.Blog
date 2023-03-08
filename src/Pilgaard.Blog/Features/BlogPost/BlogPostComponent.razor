@@ -1,13 +1,18 @@
 ﻿@page "/posts/{blogPostSeriesPathName}/{blogPostPathName}"
 <article class="blog-post">
-    @if (BlogPostSeries is not null)
-    {
-        <h3>@BlogPostSeries.Title - Part @BlogPost.NumberInSeries</h3>
-        <h1>@BlogPost.Title</h1>
-        <hr />
-        <br />
-    }
-    @BlogPostText
+
+    <MudText Typo="Typo.h3" Color="Color.Secondary">
+        @BlogPostSeries.Title - Part @BlogPost.NumberInSeries
+    </MudText>
+
+    <MudText Typo="Typo.h1" Color="Color.Tertiary">@BlogPost.Title</MudText>
+
+    <hr class="mb-5"/>
+
+    <BlogPostNavigation CurrentBlogPost="BlogPost" BlogPostSeries="BlogPostSeries">
+        @BlogPostText
+    </BlogPostNavigation>
+
 </article>
 <MetadataComponent 
     Title="@Title" 
@@ -23,13 +28,11 @@
     public string BlogPostPathName { get; set; } = null!;
 
     public BlogPost BlogPost { get; set; } = null!;
-    public BlogPostSeries? BlogPostSeries { get; set; }
+    public BlogPostSeries BlogPostSeries { get; set; } = null!;
 
-    private string Title => BlogPostSeries?.Title is null ?
-        $"{DefaultMetadata.Title} | {BlogPost.Title}" :
-        $"{DefaultMetadata.Title} | {BlogPost.Title} | {BlogPostSeries.Title} - Part {BlogPost.NumberInSeries}";
+    private string Title => $"{DefaultMetadata.Title} | {BlogPost.Title} | {BlogPostSeries.Title} - Part {BlogPost.NumberInSeries}";
 
-    private string Tags => string.Join(", ", BlogPost.Tags, BlogPostSeries?.Tags);
+    private string Tags => string.Join(", ", BlogPost.Tags, BlogPostSeries.Tags);
     
     private MarkupString BlogPostText { get; set; }
 
@@ -46,16 +49,16 @@
     {
         BlogPostSeriesPathName ??= "general";
         
-        BlogPostSeries = BlogPostData.AllBlogPostSeries.FirstOrDefault(series => series.PathName == BlogPostSeriesPathName);
+        BlogPostSeries = BlogPostData.AllBlogPostSeries.First(series => series.PathName == BlogPostSeriesPathName);
         
-        BlogPost = BlogPostSeries?.BlogPosts.FirstOrDefault(blogPost => blogPost.PathName == BlogPostPathName)!;
-        
+        BlogPost = BlogPostSeries.BlogPosts.FirstOrDefault(blogPost => blogPost.PathName == BlogPostPathName)!;
+
         var pathPrefix = Path.Join(AppDomain.CurrentDomain.BaseDirectory, "Pages", "posts");
 
         var path = BlogPostSeriesPathName is null
             ? Path.Join(pathPrefix, BlogPostPathName + ".md")
             : Path.Join(pathPrefix, BlogPostSeriesPathName, BlogPostPathName + ".md");
+    
         return path;
-
     }
 }

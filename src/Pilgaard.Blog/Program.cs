@@ -1,3 +1,4 @@
+using Microsoft.Azure.SignalR;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,16 +9,12 @@ static WebApplication ConfigureServices(WebApplicationBuilder builder)
 {
     builder.Services.AddMudServices();
     builder.Services.AddSignalR().AddAzureSignalR(options =>
-    {
-        options.ServerStickyMode =
-            Microsoft.Azure.SignalR.ServerStickyMode.Required;
-    });
+        options.ServerStickyMode = ServerStickyMode.Required);
 
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
     return builder.Build();
 }
-
 
 static WebApplication ConfigureRequestPipeline(WebApplication app)
 {
@@ -35,9 +32,6 @@ static WebApplication ConfigureRequestPipeline(WebApplication app)
     app.UseStaticFiles();
 
     app.UseRouting();
-
-    app.UseAuthentication();
-    app.UseAuthorization();
 
     app.MapControllers();
     app.MapBlazorHub();

@@ -1,5 +1,4 @@
-﻿
-I wanted to make links to my blog posts more accurate, so I needed to add some `<meta>` tags 
+﻿I wanted to make links to my blog posts more accurate, so I needed to add some `<meta>` tags 
 to provide title, description and tags to the websites displaying links. 
 
 I wanted to use the data I already have for rendering blog post cards on the front page, so I figured I'd make a component for it:
