@@ -1,9 +1,9 @@
 ﻿@inject IJSRuntime JsRuntime
 
 @code {
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await JsRuntime.InvokeVoidAsync("window.Prism.highlightAll");
-        await base.OnAfterRenderAsync(firstRender);
     }
 }
