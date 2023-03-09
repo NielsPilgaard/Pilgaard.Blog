@@ -1,5 +1,4 @@
-﻿@ChildContent
-<div class="mt-5">
+﻿<div class="mt-5">
 <BlogPostNavigationButton BlogPost="_previousBlogPost"
                           BlogPostSeries="BlogPostSeries"
                           Next="false" />
@@ -10,9 +9,8 @@
 </div>
 @code {
     [Parameter]
-    public RenderFragment ChildContent { get; set; } = null!;
-    [Parameter]
     public BlogPostSeries BlogPostSeries { get; set; } = null!;
+
     [Parameter]
     public BlogPost CurrentBlogPost { get; set; } = null!;
 
@@ -25,13 +23,11 @@
         {
             _previousBlogPost = BlogPostSeries
                 .BlogPosts
-                .FirstOrDefault(bp
-                    => bp.NumberInSeries == CurrentBlogPost.NumberInSeries - 1);
+                .FirstOrDefault(bp => bp.NumberInSeries == CurrentBlogPost.NumberInSeries - 1);
         }
 
         _nextBlogPost = BlogPostSeries
             .BlogPosts
-            .FirstOrDefault(bp
-                => bp.NumberInSeries == CurrentBlogPost.NumberInSeries + 1);
+            .FirstOrDefault(bp => bp.NumberInSeries == CurrentBlogPost.NumberInSeries + 1);
     }
 }
