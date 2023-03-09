@@ -8,7 +8,8 @@
 <MudButton Color="Color.Primary"
            OnClick="@NavigateToBlogPost"
            Variant="Variant.Filled"
-           EndIcon="@(Next ? Icons.Material.Filled.NavigateNext : Icons.Material.Filled.NavigateBefore)"
+           StartIcon="@(Next ? string.Empty : Icons.Material.Filled.NavigateBefore)"
+           EndIcon="@(Next ? Icons.Material.Filled.NavigateNext : string.Empty)"
            Size="Size.Small">
     @(Next ? $"Next: {BlogPost.Title}" : $"Previous: {BlogPost.Title}")
 </MudButton>
