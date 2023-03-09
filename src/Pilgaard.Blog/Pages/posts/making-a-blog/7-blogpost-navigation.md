@@ -1,10 +1,10 @@
 ﻿Currently navigating between posts is cumbersome, so I wanted to add easy navigation.
 
-To do this, I made a `BlogPostNavigation` component and added it to my `BlogPostComponent`.
+To do this, I made a `BlogPostNavigation` component and added it to my `BlogPostComponent`
 
 All my blog posts are currently stored in-code, so it's luckily very easy to determine whether there's a next/previous post in the series:
 
-`BlogPostNavigation.razor`:
+`BlogPostNavigation.razor`
 ```csharp
 <div class="mt-5">
 <BlogPostNavigationButton BlogPost="_previousBlogPost"
@@ -45,7 +45,7 @@ The next and previous blog posts are determined based on the current blog post's
 
 They're then passed to the `BlogPostNavigationButton` component which renders them nicely, or returns early if they're null.
 
-`BlogPostNavigationButton.razor`:
+`BlogPostNavigationButton.razor`
 ```csharp
 @inject NavigationManager NavigationManager
 
@@ -83,7 +83,7 @@ They're then passed to the `BlogPostNavigationButton` component which renders th
 The BlogPostNavigationButton handles navigating to the previous/next blog post using the built-in `NavigationManager`. 
 It's important to set `forceLoad` to true, because otherwise the markdown isn't reconstructed correctly.
 
-Tying it all together in `BlogPostComponent.razor`:
+Tying it all together in `BlogPostComponent.razor`
 ```csharp
 <BlogPostNavigation CurrentBlogPost="BlogPost" BlogPostSeries="BlogPostSeries"/>
 ```
