@@ -83,7 +83,9 @@
     padding: 0.25rem;
     color: var(--mud-palette-primary-text);
 }
-
+.blog-post img {
+    max-width: 100%;
+}
 .blog-post hr {
     border: none;
     height: 1px;
