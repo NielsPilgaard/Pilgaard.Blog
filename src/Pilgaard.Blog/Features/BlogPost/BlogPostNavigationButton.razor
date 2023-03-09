@@ -20,5 +20,7 @@
     [Parameter] public bool Next { get; set; }
 
     private void NavigateToBlogPost() 
-        => NavigationManager.NavigateTo(BlogPostSeries.GetRelativePath(BlogPost!), true);
+        => NavigationManager.NavigateTo(
+            uri: BlogPostSeries.GetRelativePath(BlogPost!), 
+            forceLoad: true);
 }
