@@ -58,7 +58,7 @@ public static class BlogPostData
                 pathName: "7-blogpost-navigation",
                 publishDate: new DateOnly(2023,
                     3,
-                    5),
+                    9),
                 numberInSeries: 7,
                 "mudblazor"),
             //new (title: "",
