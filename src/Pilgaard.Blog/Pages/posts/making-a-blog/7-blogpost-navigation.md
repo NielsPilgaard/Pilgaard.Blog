@@ -98,10 +98,10 @@ Here's what the end product looks like:
 
 We've added simple navigation buttons to move between blog posts, to make for a nicer experience.
 
-### Pull Request implementing these changes: 
+### See the code 
 
 https://github.com/NielsPilgaard/Pilgaard.Blog/pull/23
 
-### The state of the blog as of this post:
+### The state of the blog
 ![State of the blog](https://user-images.githubusercontent.com/21295394/224152139-cd53b1a6-a89f-4b85-b10a-4beae4b83a22.png)
 
