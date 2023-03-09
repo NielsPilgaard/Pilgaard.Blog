@@ -3,6 +3,10 @@
     src: url(../fonts/mallanna-regular.ttf);
 }
 
+h1:focus {
+    outline: none;
+}
+
 @media screen and (max-width: 1500px) {
     .logo-text {
         font-family: mallanna !important;

@@ -5,13 +5,15 @@
         @BlogPostSeries.Title - Part @BlogPost.NumberInSeries
     </MudText>
 
-    <MudText Typo="Typo.h1" Color="Color.Tertiary">@BlogPost.Title</MudText>
+    <MudText Typo="Typo.h1" Color="Color.Tertiary">
+        @BlogPost.Title
+    </MudText>
 
     <hr class="mb-5"/>
 
-    <BlogPostNavigation CurrentBlogPost="BlogPost" BlogPostSeries="BlogPostSeries">
-        @BlogPostText
-    </BlogPostNavigation>
+    @BlogPostText
+
+    <BlogPostNavigation CurrentBlogPost="BlogPost" BlogPostSeries="BlogPostSeries"/>
 
 </article>
 <MetadataComponent 
