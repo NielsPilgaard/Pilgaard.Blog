@@ -15,9 +15,14 @@
 </MudButton>
 
 @code {
-    [Parameter] public BlogPost? BlogPost { get; set; } = null!;
-    [Parameter] public BlogPostSeries BlogPostSeries { get; set; } = null!;
-    [Parameter] public bool Next { get; set; }
+    [Parameter] 
+    public BlogPost? BlogPost { get; set; } = null!;
+
+    [Parameter] 
+    public BlogPostSeries BlogPostSeries { get; set; } = null!;
+
+    [Parameter] 
+    public bool Next { get; set; }
 
     private void NavigateToBlogPost() 
         => NavigationManager.NavigateTo(
