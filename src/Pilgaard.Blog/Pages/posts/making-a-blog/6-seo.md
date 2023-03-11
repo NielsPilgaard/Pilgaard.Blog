@@ -1,7 +1,8 @@
-﻿I wanted to make links to my blog posts more accurate, so I needed to add some `<meta>` tags 
-to provide title, description and tags to the websites displaying links. 
+﻿I wanted to make links to my blog posts more accurate, so I needed to add some `<meta>` tags
+to provide title, description and tags to the websites displaying links.
 
 I wanted to use the data I already have for rendering blog post cards on the front page, so I figured I'd make a component for it:
+
 ```csharp
 <PageTitle>@Title</PageTitle>
 <HeadContent>
@@ -34,12 +35,14 @@ The meta tags that start in `og` helps sites like Twitter and Facebook display t
 To make use of the new `MetadataComponent`, I first removed the title and meta tags from `Index.razor`,
 and replaced it with this:
 
-
 Usage in `Index.razor`
+
 ```csharp
 <MetadataComponent Title="@DefaultMetadata.Title" Description="@DefaultMetadata.Description" Tags="@DefaultMetadata.Tags" />
 ```
+
 The defaults are defined in a separate file:
+
 ```csharp
 public static class DefaultMetadata
 {
@@ -52,9 +55,9 @@ public static class DefaultMetadata
 To set it up for BlogPosts, I did the following in `BlogPostComponent.razor`:
 
 ```csharp
-<MetadataComponent 
-    Title="@Title" 
-    Description="@BlogPost.Description" 
+<MetadataComponent
+    Title="@Title"
+    Description="@BlogPost.Description"
     Tags="@Tags" />
 
 @code {
@@ -65,8 +68,21 @@ To set it up for BlogPosts, I did the following in `BlogPostComponent.razor`:
     private string Tags => string.Join(", ", BlogPost.Tags, BlogPostSeries?.Tags);
 }
 ```
-*File trimmed for brevity*
+
+_File trimmed for brevity_
 
 ## Summary
 
 We've seen that adding SEO metadata to Blazor Server is a breeze using the built in `<PageTitle>` and `<HeadContent` components.
+
+### See the code
+
+[Pull Request implementing the changes in this post](https://github.com/NielsPilgaard/Pilgaard.Blog/pull/19)
+
+### The state of the blog
+
+**Front page**
+![Front page](https://user-images.githubusercontent.com/21295394/224504835-f0971606-7060-4199-9e53-5ea7560b5665.png)
+
+**This post**
+![This post](https://user-images.githubusercontent.com/21295394/224504829-c2650ae5-ec67-43bc-b1df-f9aad1b9d3c9.png)
