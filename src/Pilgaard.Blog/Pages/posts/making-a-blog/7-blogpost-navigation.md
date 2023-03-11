@@ -5,6 +5,7 @@ To do this, I made a `BlogPostNavigation` component and added it to my `BlogPost
 All my blog posts are currently stored in-code, so it's luckily very easy to determine whether there's a next/previous post in the series:
 
 `BlogPostNavigation.razor`
+
 ```csharp
 <div class="mt-5">
 <BlogPostNavigationButton BlogPost="_previousBlogPost"
@@ -46,6 +47,7 @@ The next and previous blog posts are determined based on the current blog post's
 They're then passed to the `BlogPostNavigationButton` component which renders them nicely, or returns early if they're null.
 
 `BlogPostNavigationButton.razor`
+
 ```csharp
 @inject NavigationManager NavigationManager
 
@@ -64,26 +66,27 @@ They're then passed to the `BlogPostNavigationButton` component which renders th
 </MudButton>
 
 @code {
-    [Parameter] 
+    [Parameter]
     public BlogPost? BlogPost { get; set; } = null!;
-    
-    [Parameter] 
+
+    [Parameter]
     public BlogPostSeries BlogPostSeries { get; set; } = null!;
-    
-    [Parameter] 
+
+    [Parameter]
     public bool Next { get; set; }
 
-    private void NavigateToBlogPost() 
+    private void NavigateToBlogPost()
         => NavigationManager.NavigateTo(
-            uri: BlogPostSeries.GetRelativePath(BlogPost!), 
+            uri: BlogPostSeries.GetRelativePath(BlogPost!),
             forceLoad: true);
 }
 ```
 
-The BlogPostNavigationButton handles navigating to the previous/next blog post using the built-in `NavigationManager`. 
+The BlogPostNavigationButton handles navigating to the previous/next blog post using the built-in `NavigationManager`.
 It's important to set `forceLoad` to true, because otherwise the markdown isn't reconstructed correctly.
 
 Tying it all together in `BlogPostComponent.razor`
+
 ```csharp
 <BlogPostNavigation CurrentBlogPost="BlogPost" BlogPostSeries="BlogPostSeries"/>
 ```
@@ -98,11 +101,10 @@ Here's what the end product looks like:
 
 We've added simple navigation buttons to move between blog posts, to make for a nicer reading experience.
 
-### See the code 
+### See the code
 
-https://github.com/NielsPilgaard/Pilgaard.Blog/pull/23
+[Pull Request implementing the changes in this post](https://github.com/NielsPilgaard/Pilgaard.Blog/pull/23)
 
 ### The state of the blog
 
 ![State of the blog](https://user-images.githubusercontent.com/21295394/224152139-cd53b1a6-a89f-4b85-b10a-4beae4b83a22.png)
-

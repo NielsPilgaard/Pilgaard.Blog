@@ -109,8 +109,9 @@ Now that it's possible, I hope you'll leave a comment or reaction below 😄
 
 ### See the code
 
-https://github.com/NielsPilgaard/Pilgaard.Blog/pull/15
+[Pull Request implementing the changes in this post](https://github.com/NielsPilgaard/Pilgaard.Blog/pull/15)
 
 ### The state of the blog
 
-![State of the blog](https://user-images.githubusercontent.com/21295394/224152139-cd53b1a6-a89f-4b85-b10a-4beae4b83a22.png)
+![State of the blog](https://user-images.githubusercontent.com/21295394/224504686-85114dcd-bd0b-4573-a647-fc18eafd45df.png)
+![Comment Section](https://user-images.githubusercontent.com/21295394/224504695-bc751901-74a6-4f3d-af08-e3ab75e42e8e.png)

@@ -88,8 +88,8 @@ I think this has been a good first round of UI improvements :D
 
 ### See the code
 
-https://github.com/NielsPilgaard/Pilgaard.Blog/pull/2
+[Pull Request implementing the changes in this post](https://github.com/NielsPilgaard/Pilgaard.Blog/pull/2)
 
 ### The state of the blog
 
-![State of the blog](https://user-images.githubusercontent.com/21295394/224152139-cd53b1a6-a89f-4b85-b10a-4beae4b83a22.png)
+![State of the blog](https://user-images.githubusercontent.com/21295394/224504771-ee180e6f-18be-4ff9-b86a-614d117ee937.png)
