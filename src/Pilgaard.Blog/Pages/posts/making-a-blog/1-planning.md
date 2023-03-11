@@ -6,19 +6,17 @@ soon as it's functional - Meaning there's a good chance it's rough on the eyes a
 
 I'll be improving on the blog gradually and making posts about it along the way.
 
-
 ## The plan
-<ol>
-    <li>Pick tools & hosting</li>
-    <li>Blog website MVP - <em>probably just a page with text</em></li>
-    <li>Publish website</li>
-    <li>Add links to GitHub, Twitter, LinkedIn etc</li>
-    <li>Improve appearance of the website</li>
-    <li>A system that allows me to make and publish new blog posts directly on the website</li>
-    <li>A comment section for blog posts</li>
-    <li>Search Engine Optimizations (SEO)</li>
-    <li>Allow people to subscribe to get notifications about new posts</li>
-    <li>???</li>
-</ol>
+
+1.  Pick tools & hosting
+2.  Blog website MVP - _probably just a page with text_
+3.  Publish website
+4.  Add links to GitHub, Twitter, LinkedIn etc
+5.  Improve appearance of the website
+6.  A system that allows me to make and publish new blog posts directly on the website
+7.  A comment section for blog posts
+8.  Search Engine Optimizations (SEO)
+9.  Allow people to subscribe to get notifications about new posts
+10. ???
 
 Let's see how far that plan takes us! 😄

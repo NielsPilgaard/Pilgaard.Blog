@@ -31,15 +31,14 @@ In order to actually display them on the website, I added the code below to `Ind
 This does the following:
 
 - Find all `.md` files that should be displayed
-    - With this approach, files must be copied to the output directory on build
+  - With this approach, files must be copied to the output directory on build
 - Read the files
 - Convert their text to HTML
 - Render the HTML
 
-
 ## Rendering Markdown with Markdig
-I used [Markdig](https://github.com/xoofx/markdig) to convert markdown to HTML, through an extension method:
 
+I used [Markdig](https://github.com/xoofx/markdig) to convert markdown to HTML, through an extension method:
 
 ```csharp
 public static class StringExtensions
@@ -58,8 +57,8 @@ public static class StringExtensions
 }
 ```
 
-
 ## Syntax Highlighted Code Blocks
+
 I started out using the Markdig extension <a href="https://github.com/arthurrump/MarkdigExtensions">Markdig.SyntaxHighlighting</a> to add color to code blocks, but I thought the colors were a bit dull, so I switched it out with <a href="https://prismjs.com/">PrismJs</a>.
 To get Prism to colorize code blocks, here's what to do:
 
@@ -67,22 +66,19 @@ To get Prism to colorize code blocks, here's what to do:
 - Put the `prism.js` and `prism.css` files in the `wwwroot` folder of the project.
 - Add links to the files in the `_Layout.cshtml`:
 
-
 ```html
 <head>
-...
-<link href="css/prism.css" rel="stylesheet" />
+  ...
+  <link href="css/prism.css" rel="stylesheet" />
 </head>
 
 <body>
-...
-<script src="scripts/prism.js"></script>
+  ...
+  <script src="scripts/prism.js"></script>
 </body>
 ```
-    
 
 - Add this function to the page that should be highlighted:
-
 
 ```csharp
 @inject IJSRuntime JsRuntime
@@ -96,17 +92,15 @@ To get Prism to colorize code blocks, here's what to do:
 }
 ```
 
-
 And that's it!
 
 ## Page Links misbehaving
-I wanted to add a little section at the top with links to each part of this blog series, but I just couldn't get page links like this one to work:
 
+I wanted to add a little section at the top with links to each part of this blog series, but I just couldn't get page links like this one to work:
 
 ```html
 <a href="#item-id-here"></a>
 ```
-
 
 After an intense googling session, I stumpled upon this issue:
 <a href="https://github.com/dotnet/aspnetcore/issues/8393">https://github.com/dotnet/aspnetcore/issues/8393</a>
@@ -116,7 +110,6 @@ Apparently, this type of link just doesn't work in Blazor yet. Huh.
 Luckily, there's a workaround that works just fine for my use-case:
 Adding `onclick="event.stopPropagation();"`
 
-
 ```html
 <a href="#item-id-here" onclick="event.stopPropagation();"></a>
 ```
@@ -125,22 +118,35 @@ The caveat is that this will stop any other `onclick` EventHandler from firing f
 Credit to <a href="https://github.com/dotnet/aspnetcore/issues/8393#issuecomment-526545768">SQL-MisterMagoo</a> for the workaround :D
 
 ## Accidental SEO
+
 While adding Prism to `_Layout.cstml`, I couldn't help myself and added some meta tags while I was in there:
 
-
 ```html
-<meta name="description"
-      content="Hi! I write about code - Particularly C#, but also the occasional PowerShell and JavaScript." />
+<meta
+  name="description"
+  content="Hi! I write about code - Particularly C#, but also the occasional PowerShell and JavaScript."
+/>
 <meta property="og:url" content="https://pilgaard-blog.azurewebsites.net/" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Pilgaard | dotnet blog" />
-<meta property="og:description"
-      content="Hi! I write about code - Particularly C#, but also the occasional PowerShell and JavaScript." />
-<meta property="og:image"
-      content="https://pilgaard-blog.azurewebsites.net/favicon.ico" />
+<meta
+  property="og:description"
+  content="Hi! I write about code - Particularly C#, but also the occasional PowerShell and JavaScript."
+/>
+<meta
+  property="og:image"
+  content="https://pilgaard-blog.azurewebsites.net/favicon.ico"
+/>
 ```
 
 That should make links to the blog render nicely on Twitter, and Facebook.
 
 ## Going Live
+
 And with that, the website MVP was ready to go live! At this point, I announced the website and my plans on Twitter: <a href="https://twitter.com/Niels_Pilgaard/status/1579210443687890946">https://twitter.com/Niels_Pilgaard/status/1579210443687890946</a>
+
+### The state of the blog
+
+https://github.com/NielsPilgaard/Pilgaard.Blog/tree/1.0.0-MVP
+
+![State of the blog](https://user-images.githubusercontent.com/21295394/224152139-cd53b1a6-a89f-4b85-b10a-4beae4b83a22.png)

@@ -1,21 +1,20 @@
 ﻿## Razor vs Markdown
 
-After experimenting with MudBlazor I made the decision to use <code>.razor</code> files for blog posts instead of markdown.
+After experimenting with MudBlazor I made the decision to use `.razor` files for blog posts instead of markdown.
 Using markdown is super convenient, but Blazor Components can do so much more.
 
 Plus, by using Blazor Components for blog posts I'll be able to showcase Blazor
 features more easily, should I choose to do so in the future.
 
-So I went ahead and converted my <code>.md</code> files to HTML using
+So I went ahead and converted my `.md` files to HTML using
 <a target="_blank" href="https://markdowntohtml.com/">this online tool</a>.
 It looked awful at first, and colored code blocks were a complete mess.
 
-Then I changed all <code>p</code> tags to <code>MudText</code>, leveraging the default styling of MudBlazor.
+Then I changed all `p` tags to `MudText`, leveraging the default styling of MudBlazor.
 
 In order to un-break code blocks, I figured out I could use string literals
 and then convert them with my old markdown to HTML processor. It had to be string literals, because otherwise
 HTML wouldn't be shown correctly "as code":
-
 
 ### Code
 
@@ -26,7 +25,6 @@ HTML wouldn't be shown correctly "as code":
 ```
 ".ToHtml())
 ````
-
 
 ### Output
 
@@ -55,7 +53,6 @@ Luckily making and changing between light/dark mode is very simple with MudBlazo
 
 It's possible to change mode depending on the system preference of the user:
 
-
 ```csharp
 <MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" />
 @code {
@@ -77,7 +74,6 @@ It's possible to change mode depending on the system preference of the user:
 
 As it turns out, making good looking links to Social Media websites is really easy with MudBlazor:
 
-
 ```csharp
 <MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Inherit" Link="https://www.linkedin.com/in/niels-pilgaard/" Title="My LinkedIn Profile" target="_blank" />
 <MudIconButton Icon="@Icons.Custom.Brands.Twitter" Color="Color.Inherit" Link="https://twitter.com/Niels_Pilgaard" Title="My Twitter Profile" target="_blank" />
@@ -89,4 +85,11 @@ As it turns out, making good looking links to Social Media websites is really ea
 I've managed to make the website look better, in my opinion.
 
 I think this has been a good first round of UI improvements :D
-    
+
+### See the code
+
+https://github.com/NielsPilgaard/Pilgaard.Blog/pull/2
+
+### The state of the blog
+
+![State of the blog](https://user-images.githubusercontent.com/21295394/224152139-cd53b1a6-a89f-4b85-b10a-4beae4b83a22.png)

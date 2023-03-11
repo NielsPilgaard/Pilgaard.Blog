@@ -1,24 +1,18 @@
 ﻿I decided on using <a href="https://giscus.app/" target="_blank">Giscus</a> as my commenting system, as it seemed the simplest and easiest to set up.
 
-To set up Giscus, there are a few prerequisites: 
+To set up Giscus, there are a few prerequisites:
 
-<ul>
-    <li>A public GitHub repository. You can think of this as the storage for your comments.</li>
-    <li>The <a href="https://github.com/apps/giscus" target="_blank">Giscus</a> app must be installed in your repository.</li>
-    <li>The Discussions feature must be turned on by 
-        <a href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository" target="_blank">
-            enabling it in your repository.</a> 
-        It is not enabled by default.
-    </li>
-</ul>
+- A public GitHub repository. You can think of this as the storage for your comments.
+- The [Giscus](https://github.com/apps/giscus) app must be installed in your repository.
+- The Discussions feature must be turned on by <a href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository" target="_blank">
+  enabling it in your repository.</a> It is not enabled by default.
 
-Adding it to a Blazor website isn't as straight forward as following the guide though, 
-and after a lot of head-scratching, 
+Adding it to a Blazor website isn't as straight forward as following the guide though,
+and after a lot of head-scratching,
 <a href="https://github.com/giscus/giscus/issues/740" target="_blank">
-    I made an issue
+I made an issue
 </a>
 on the Giscus issue tracker asking for help. They quickly answered and got me back on track.
-
 
 ## GiscusBlazor
 
@@ -28,22 +22,19 @@ There's a Giscus Blazor component!
     https://github.com/Jisu-Woniu/giscus-blazor
 </a>
 
-To set it up, start by adding the nuget <code>GiscusBlazor</code>:
-
+To set it up, start by adding the nuget `GiscusBlazor`:
 
 ```shell
 dotnet add package GiscusBlazor
 ```
 
-Then import the required script in your <code>_Layout.cshtml</code>:
+Then import the required script in your `\_Layout.cshtml`:
 
 ```cshtml
 <script type="module" src="https://cdn.esm.sh/giscus?bundle"></script>
 ```
 
-
 Lastly, in order to add the comment area to your page, add this:
-
 
 ```cshtml
 <Giscus Repo="[ENTER REPO HERE]"
@@ -60,16 +51,12 @@ Lastly, in order to add the comment area to your page, add this:
     Loading="Loading.Lazy" />
 ```
 
-
-
-The required values can easily be configured using the Configuration section on 
+The required values can easily be configured using the Configuration section on
 <a href="https://giscus.app/" target="_blank">
-    https://giscus.app/
+https://giscus.app/
 </a>
 
 In my case, it looked like this:
-
-
 
 ```cshtml
 @using GiscusBlazor
@@ -87,10 +74,9 @@ In my case, it looked like this:
     Loading="Loading.Lazy" />
 ```
 
-
 ## Styling
 
-To pretty up the comment section I added this bit to my <code>site.css</code>:
+To pretty up the comment section I added this bit to my `site.css`:
 
 ```css
 .giscus-frame {
@@ -112,14 +98,19 @@ To pretty up the comment section I added this bit to my <code>site.css</code>:
 }
 ```
 
-
 ## Summary
 
-We learned how to add a comment area to a page using 
+We learned how to add a comment area to a page using
 <a href="https://giscus.app/" target="_blank">Giscus</a>
-and 
+and
 <a href="https://github.com/Jisu-Woniu/giscus-blazor" target="_blank">GiscusBlazor</a>, by leveraging the GitHub Discussions API.
 
 Now that it's possible, I hope you'll leave a comment or reaction below 😄
-    
-    
+
+### See the code
+
+https://github.com/NielsPilgaard/Pilgaard.Blog/pull/15
+
+### The state of the blog
+
+![State of the blog](https://user-images.githubusercontent.com/21295394/224152139-cd53b1a6-a89f-4b85-b10a-4beae4b83a22.png)
