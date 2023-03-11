@@ -23,7 +23,7 @@ The first thing I had to do was add a Service Dependency to Azure SignalR Servic
 - Clicked the `Connected Services` tab on the left, and then <span style="color:green;font-size:18px">+</span>
 - Found `Azure SignalR Service` in the list, and completed the steps to provision it
 
-I started out saving the generated connection string in Azure KeyVault, but I had trouble launching the app locally after that, and switched to using a local `<code>`secret.json` file.
+I started out saving the generated connection string in Azure KeyVault, but I had trouble launching the app locally after that, and switched to using a local `secret.json` file.
 
 ### Azure App Service
 

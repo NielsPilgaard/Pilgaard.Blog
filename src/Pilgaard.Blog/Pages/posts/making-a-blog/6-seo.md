@@ -81,5 +81,8 @@ We've seen that adding SEO metadata to Blazor Server is a breeze using the built
 
 ### The state of the blog
 
+**Front page**
 ![Front page](https://user-images.githubusercontent.com/21295394/224504835-f0971606-7060-4199-9e53-5ea7560b5665.png)
+
+**This post**
 ![This post](https://user-images.githubusercontent.com/21295394/224504829-c2650ae5-ec67-43bc-b1df-f9aad1b9d3c9.png)

@@ -145,8 +145,10 @@ That should make links to the blog render nicely on Twitter, and Facebook.
 
 And with that, the website MVP was ready to go live! At this point, I announced the website and my plans on Twitter: <a href="https://twitter.com/Niels_Pilgaard/status/1579210443687890946">https://twitter.com/Niels_Pilgaard/status/1579210443687890946</a>
 
-### The state of the blog
+### See the code
 
 [Source Code as of this post](https://github.com/NielsPilgaard/Pilgaard.Blog/tree/1.0.0-MVP)
+
+### The state of the blog
 
 ![State of the blog](https://user-images.githubusercontent.com/21295394/224504569-38203f3a-9a9d-4200-a3e4-05601e7d458a.png)

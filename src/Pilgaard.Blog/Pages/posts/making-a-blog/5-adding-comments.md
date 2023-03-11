@@ -113,5 +113,8 @@ Now that it's possible, I hope you'll leave a comment or reaction below 😄
 
 ### The state of the blog
 
+**This post**
 ![State of the blog](https://user-images.githubusercontent.com/21295394/224504686-85114dcd-bd0b-4573-a647-fc18eafd45df.png)
+
+**Comment section**
 ![Comment Section](https://user-images.githubusercontent.com/21295394/224504695-bc751901-74a6-4f3d-af08-e3ab75e42e8e.png)
