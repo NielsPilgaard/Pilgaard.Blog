@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider @ref="@_mudThemeProvider" @bind-IsDarkMode="@_isDarkMode" Theme="CustomTheme" />
+<ThemeProvider/>
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -12,34 +12,3 @@
         </MudContainer>
     </MudMainContent>
 </MudLayout>
-
-@code {
-    private bool _isDarkMode = true;
-    private MudThemeProvider _mudThemeProvider = null!;
-    static readonly MudTheme CustomTheme = new()
-        {
-            Typography = new Typography
-            {
-                Default = new Default
-                {
-                    FontSize = "1rem",
-                    FontWeight = 400,
-                    LineHeight = 2,
-                },
-                Body1 = new Body1
-                {
-                    FontSize = "1rem",
-                    FontWeight = 400,
-                    LineHeight = 2,
-                }
-            }
-        };
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            _isDarkMode = await _mudThemeProvider.GetSystemPreference();
-            StateHasChanged();
-        }
-    }
-}
