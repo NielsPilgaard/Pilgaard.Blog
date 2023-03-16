@@ -15,6 +15,7 @@
 	  <None Remove="Pages\posts\making-a-blog\5-adding-comments.md" />
 	  <None Remove="Pages\posts\making-a-blog\6-seo.md" />
 	  <None Remove="Pages\posts\making-a-blog\7-blogpost-navigation.md" />
+	  <None Remove="Pages\posts\making-a-blog\8-system-theme.md" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -28,6 +29,9 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Pages\posts\making-a-blog\4-improving-appearances.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Pages\posts\making-a-blog\8-system-theme.md">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Pages\posts\making-a-blog\7-blogpost-navigation.md">
