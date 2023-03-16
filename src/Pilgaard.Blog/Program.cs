@@ -1,5 +1,6 @@
 using Microsoft.Azure.SignalR;
 using MudBlazor.Services;
+using Pilgaard.Blog.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = ConfigureServices(builder);
@@ -11,8 +12,11 @@ static WebApplication ConfigureServices(WebApplicationBuilder builder)
     builder.Services.AddSignalR().AddAzureSignalR(options =>
         options.ServerStickyMode = ServerStickyMode.Required);
 
+    builder.Services.AddScoped<ThemeProvider>();
+
     builder.Services.AddRazorPages();
     builder.Services.AddServerSideBlazor();
+
     return builder.Build();
 }
 
