@@ -86,7 +86,7 @@ Thank you [TDroogers](https://github.com/TDroogers) for [adding this feature to 
 
 ### See the code
 
-[Pull Request implementing the changes in this post](https://github.com/NielsPilgaard/Pilgaard.Blog/pull/23)
+[Pull Request implementing the changes in this post](https://github.com/NielsPilgaard/Pilgaard.Blog/pull/29)
 
 ### The state of the blog
 
