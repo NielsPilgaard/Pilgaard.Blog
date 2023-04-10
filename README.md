@@ -1,4 +1,4 @@
-[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/ohzh.svg)](https://betteruptime.com/?utm_source=status_badge)
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/m849.svg)](https://pilgaard-blog.betteruptime.com/)
 
 # Pilgaard.Blog
 
