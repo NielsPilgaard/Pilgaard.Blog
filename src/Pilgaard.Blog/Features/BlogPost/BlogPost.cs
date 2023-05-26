@@ -5,7 +5,8 @@ public class BlogPost
     public BlogPost(string title,
         string description,
         string pathName,
-        DateOnly publishDate,
+        DateTimeOffset publishDate,
+        DateTimeOffset lastUpdated,
         int numberInSeries = 1,
         params string[] tags)
     {
@@ -13,6 +14,7 @@ public class BlogPost
         Description = description;
         PathName = pathName;
         PublishDate = publishDate;
+        LastUpdated = lastUpdated;
         NumberInSeries = numberInSeries;
         Tags = tags;
     }
@@ -20,7 +22,8 @@ public class BlogPost
     public string Title { get; }
     public string Description { get; }
     public string PathName { get; }
-    public DateOnly PublishDate { get; }
+    public DateTimeOffset PublishDate { get; }
+    public DateTimeOffset LastUpdated { get; }
     public int NumberInSeries { get; }
     public string[] Tags { get; }
 }

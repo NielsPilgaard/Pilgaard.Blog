@@ -1,5 +1,6 @@
 using Microsoft.Azure.SignalR;
 using MudBlazor.Services;
+using Pilgaard.Blog.Features.Feed;
 using Pilgaard.Blog.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +41,8 @@ static WebApplication ConfigureRequestPipeline(WebApplication app)
     app.MapControllers();
     app.MapBlazorHub();
     app.MapFallbackToPage("/_Host");
+
+    app.MapRssFeed();
 
     return app;
 }

@@ -7,17 +7,23 @@ h1:focus {
     outline: none;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 600px) {
     .logo-text {
         font-family: mallanna !important;
         font-size: 5vw;
     }
 }
-
-@media screen and (min-width: 1500px) {
+@media screen and (max-width: 1100px) and (min-width: 600px) {
     .logo-text {
         font-family: mallanna !important;
-        font-size: 75px;
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .logo-text {
+        font-family: mallanna !important;
+        font-size: 2.5vw;
     }
 }
 
@@ -38,3 +44,4 @@ h1:focus {
         margin-bottom: 12px;
     }
 }
+
