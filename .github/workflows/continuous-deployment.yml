@@ -1,8 +1,9 @@
 name: Deploy to Azure
+
 on:
   push:
-    branches:
-    - main
+    tags:
+      - '*'
 env:
   AZURE_WEBAPP_NAME: pilgaard-blog
   AZURE_WEBAPP_PACKAGE_PATH: src/Pilgaard.Blog/publish
