@@ -4,7 +4,7 @@
     <meta name="og:title" content="@Title" />
     <meta name="og:description" content="@Description" />
 
-    @if (Tags is not null)
+    @if (!string.IsNullOrEmpty(Tags))
     {
         <meta name="tags" content="@Tags" />
     }

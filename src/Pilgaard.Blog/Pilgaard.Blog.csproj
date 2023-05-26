@@ -16,6 +16,7 @@
 	  <None Remove="Pages\posts\making-a-blog\6-seo.md" />
 	  <None Remove="Pages\posts\making-a-blog\7-blogpost-navigation.md" />
 	  <None Remove="Pages\posts\making-a-blog\8-system-theme.md" />
+	  <None Remove="Pages\posts\making-a-blog\9-rss-feed.md" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -29,6 +30,9 @@
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Pages\posts\making-a-blog\4-improving-appearances.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Pages\posts\making-a-blog\9-rss-feed.md">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Pages\posts\making-a-blog\8-system-theme.md">
@@ -48,6 +52,8 @@
 	<ItemGroup>
 		<PackageReference Include="GiscusBlazor" Version="2.3.1" />
 		<PackageReference Include="Markdig" Version="0.31.0" />
+		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
+		<PackageReference Include="Microsoft.SyndicationFeed.ReaderWriter" Version="1.0.2" />
 		<PackageReference Include="Microsoft.Azure.SignalR" Version="1.21.3" />
 		<PackageReference Include="MudBlazor" Version="6.3.0" />
 	</ItemGroup>
