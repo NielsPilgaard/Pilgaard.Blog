@@ -54,7 +54,7 @@
 		<PackageReference Include="Markdig" Version="0.31.0" />
 		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
 		<PackageReference Include="Microsoft.SyndicationFeed.ReaderWriter" Version="1.0.2" />
-		<PackageReference Include="Microsoft.Azure.SignalR" Version="1.21.4" />
+		<PackageReference Include="Microsoft.Azure.SignalR" Version="1.21.5" />
 		<PackageReference Include="MudBlazor" Version="6.7.0" />
 	</ItemGroup>
 
