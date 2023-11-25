@@ -1,27 +1,27 @@
 ﻿@page "/posts/{blogPostSeriesPathName}/{blogPostPathName}"
+
 <article class="blog-post">
 
     <MudText Typo="Typo.h3" Color="Color.Secondary">
-        @BlogPostSeries.Title - Part @BlogPost.NumberInSeries
+        @_blogPostSeries.Title - Part @_blogPost.NumberInSeries
     </MudText>
 
     <MudText Typo="Typo.h1" Color="Color.Tertiary">
-        @BlogPost.Title
+        @_blogPost.Title
     </MudText>
 
-    <hr class="mb-5"/>
+    <MudDivider Class="mb-5"/>
 
     @BlogPostText
 
-    <BlogPostNavigation CurrentBlogPost="BlogPost" BlogPostSeries="BlogPostSeries"/>
+    <BlogPostNavigation CurrentBlogPost="_blogPost" BlogPostSeries="_blogPostSeries"/>
 
 </article>
-<MetadataComponent 
-    Title="@Title" 
-    Description="@BlogPost.Description" 
-    Tags="@Tags" />
+<MetadataComponent Title="@Title"
+                   Description="@_blogPost.Description"
+                   Tags="@Tags" />
 <PrismCodeBlockRenderer/>
-<GiscusComponent/>
+<GiscusComponent />
 @code {
     [Parameter]
     public string? BlogPostSeriesPathName { get; set; }
@@ -29,13 +29,13 @@
     [Parameter]
     public string BlogPostPathName { get; set; } = null!;
 
-    public BlogPost BlogPost { get; set; } = null!;
-    public BlogPostSeries BlogPostSeries { get; set; } = null!;
+    private BlogPost _blogPost = null!;
+    private BlogPostSeries _blogPostSeries = null!;
 
-    private string Title => $"{DefaultMetadata.Title} | {BlogPost.Title} | {BlogPostSeries.Title} - Part {BlogPost.NumberInSeries}";
+    private string Title => $"{DefaultMetadata.Title} | {_blogPost.Title} | {_blogPostSeries.Title} - Part {_blogPost.NumberInSeries}";
 
-    private string Tags => string.Join(", ", BlogPost.Tags, BlogPostSeries.Tags);
-    
+    private string Tags => string.Join(", ", _blogPost.Tags, _blogPostSeries.Tags);
+
     private MarkupString BlogPostText { get; set; }
 
     protected override async Task OnInitializedAsync()
@@ -43,24 +43,22 @@
         var path = GetPagePath();
         var text = await File.ReadAllTextAsync(path);
         BlogPostText = text.ToHtml();
-
-        await base.OnInitializedAsync();
     }
 
     private string GetPagePath()
     {
         BlogPostSeriesPathName ??= "general";
-        
-        BlogPostSeries = BlogPostData.AllBlogPostSeries.First(series => series.PathName == BlogPostSeriesPathName);
-        
-        BlogPost = BlogPostSeries.BlogPosts.FirstOrDefault(blogPost => blogPost.PathName == BlogPostPathName)!;
+
+        _blogPostSeries = BlogPostData.AllBlogPostSeries.First(series => series.PathName == BlogPostSeriesPathName);
+
+        _blogPost = _blogPostSeries.BlogPosts.FirstOrDefault(blogPost => blogPost.PathName == BlogPostPathName)!;
 
         var pathPrefix = Path.Join(AppDomain.CurrentDomain.BaseDirectory, "Pages", "posts");
 
         var path = BlogPostSeriesPathName is null
             ? Path.Join(pathPrefix, BlogPostPathName + ".md")
             : Path.Join(pathPrefix, BlogPostSeriesPathName, BlogPostPathName + ".md");
-    
+
         return path;
     }
 }
