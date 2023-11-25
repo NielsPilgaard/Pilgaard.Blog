@@ -1,0 +1,14 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <MudText UserAttributes="@(new Dictionary<string, object> {["role"] = "alert"})">
+                Sorry, there's nothing at this address.
+            </MudText>
+        </LayoutView>
+    </NotFound>
+</Router>
