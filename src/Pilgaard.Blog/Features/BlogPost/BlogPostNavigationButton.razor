@@ -1,12 +1,10 @@
-﻿@inject NavigationManager NavigationManager
-
-@if (BlogPost is null)
+﻿@if (BlogPost is null)
 {
     return;
 }
 
 <MudButton Color="Color.Primary"
-           OnClick="@NavigateToBlogPost"
+           Href="@BlogPostSeries.GetRelativePath(BlogPost!)"
            Variant="Variant.Filled"
            StartIcon="@(Next ? string.Empty : Icons.Material.Filled.NavigateBefore)"
            EndIcon="@(Next ? Icons.Material.Filled.NavigateNext : string.Empty)"
@@ -23,9 +21,4 @@
 
     [Parameter] 
     public bool Next { get; set; }
-
-    private void NavigateToBlogPost() 
-        => NavigationManager.NavigateTo(
-            uri: BlogPostSeries.GetRelativePath(BlogPost!), 
-            forceLoad: true);
 }
