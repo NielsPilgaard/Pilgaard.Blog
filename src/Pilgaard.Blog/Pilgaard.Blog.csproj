@@ -59,7 +59,7 @@
 		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="3.0.0" />
 		<PackageReference Include="Microsoft.SyndicationFeed.ReaderWriter" Version="1.0.2" />
 		<PackageReference Include="Microsoft.Azure.SignalR" Version="1.22.0" />
-		<PackageReference Include="MudBlazor" Version="6.11.1" />
+		<PackageReference Include="MudBlazor" Version="6.11.2" />
 	</ItemGroup>
 
 </Project>
