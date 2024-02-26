@@ -1,4 +1,3 @@
-using Microsoft.Azure.SignalR;
 using MudBlazor.Services;
 using Pilgaard.Blog;
 using Pilgaard.Blog.Features.Feed;
@@ -7,14 +6,10 @@ using Pilgaard.Blog.Shared;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMudServices();
-builder.Services.AddSignalR().AddAzureSignalR(options =>
-    options.ServerStickyMode = ServerStickyMode.Required);
 
 builder.Services.AddScoped<ThemeProvider>();
 
-builder.Services.AddRazorPages();
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+builder.Services.AddRazorComponents();
 
 var app = builder.Build();
 
@@ -32,8 +27,7 @@ app.UseRouting();
 
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
+app.MapRazorComponents<App>();
 
 app.MapRssFeed();
 
