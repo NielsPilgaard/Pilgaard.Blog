@@ -58,7 +58,7 @@
 		<PackageReference Include="Markdig" Version="0.35.0" />
 		<PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="3.0.0" />
 		<PackageReference Include="Microsoft.SyndicationFeed.ReaderWriter" Version="1.0.2" />
-		<PackageReference Include="MudBlazor" Version="6.16.0" />
+		<PackageReference Include="MudBlazor" Version="6.17.0" />
 	</ItemGroup>
 
 </Project>
